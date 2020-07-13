@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技巧 on 化简的博客</title>
+    <link>https://xzyu0106.github.io/categories/%E6%8A%80%E5%B7%A7/</link>
+    <description>Recent content in 技巧 on 化简的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 02 Mar 2020 10:30:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://xzyu0106.github.io/categories/%E6%8A%80%E5%B7%A7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>日常接触到的小tip记录</title>
+      <link>https://xzyu0106.github.io/post/%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 02 Mar 2020 10:30:50 +0800</pubDate>
+      
+      <guid>https://xzyu0106.github.io/post/%E8%AE%B0%E5%BD%95/</guid>
+      <description>在用户目录下生成公钥私钥对 ssh-keygen -t rsa</description>
+    </item>
+    
+    <item>
+      <title>Hugo的基本操作</title>
+      <link>https://xzyu0106.github.io/post/hugo_operation_manual/</link>
+      <pubDate>Sun, 01 Mar 2020 10:30:50 +0800</pubDate>
+      
+      <guid>https://xzyu0106.github.io/post/hugo_operation_manual/</guid>
+      <description>本篇博客用来记录搭建hugo后，发布新博客的一些基础操作，一切操作基于win10+hugo+git，为了方便快捷，也可以根据本博客自己写一个脚本，一键发布。 1 win+r接着cmd进入命令行界面，接着cd进入myblog目录 2 创建新博客 hugo new post\hugo_operation_manual.md 来生成新的博客，博客名为hugo_ope</description>
+    </item>
+    
+  </channel>
+</rss>

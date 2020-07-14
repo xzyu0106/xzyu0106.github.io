@@ -4,12 +4,37 @@
   
   <url>
     <loc>https://xzyu0106.github.io/categories/</loc>
-    <lastmod>2020-03-08T20:12:07+08:00</lastmod>
+    <lastmod>2020-03-18T10:30:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xzyu0106.github.io/post/200318%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2020-03-18T10:30:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xzyu0106.github.io/post/</loc>
+    <lastmod>2020-03-18T10:30:50+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://xzyu0106.github.io/tags/</loc>
-    <lastmod>2020-03-08T20:12:07+08:00</lastmod>
+    <lastmod>2020-03-18T10:30:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xzyu0106.github.io/</loc>
+    <lastmod>2020-03-18T10:30:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xzyu0106.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2020-03-18T10:30:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xzyu0106.github.io/tags/%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2020-03-18T10:30:50+08:00</lastmod>
   </url>
   
   <url>
@@ -19,11 +44,6 @@
   
   <url>
     <loc>https://xzyu0106.github.io/tags/wallhaven/</loc>
-    <lastmod>2020-03-08T20:12:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xzyu0106.github.io/</loc>
     <lastmod>2020-03-08T20:12:07+08:00</lastmod>
   </url>
   
@@ -49,11 +69,6 @@
   
   <url>
     <loc>https://xzyu0106.github.io/post/mysql%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
-    <lastmod>2020-03-07T11:30:50+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xzyu0106.github.io/post/</loc>
     <lastmod>2020-03-07T11:30:50+08:00</lastmod>
   </url>
   
@@ -98,12 +113,12 @@
   </url>
   
   <url>
-    <loc>https://xzyu0106.github.io/tags/k8s%E5%AE%89%E8%A3%85/</loc>
+    <loc>https://xzyu0106.github.io/categories/k8s%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2020-03-01T23:43:14+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://xzyu0106.github.io/categories/k8s%E5%AE%89%E8%A3%85/</loc>
+    <loc>https://xzyu0106.github.io/tags/k8s%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2020-03-01T23:43:14+08:00</lastmod>
   </url>
   
@@ -148,12 +163,12 @@
   </url>
   
   <url>
-    <loc>https://xzyu0106.github.io/tags/%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>https://xzyu0106.github.io/categories/%E4%BB%8B%E7%BB%8D/</loc>
     <lastmod>2020-02-29T20:12:07+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://xzyu0106.github.io/categories/%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>https://xzyu0106.github.io/tags/%E4%BB%8B%E7%BB%8D/</loc>
     <lastmod>2020-02-29T20:12:07+08:00</lastmod>
   </url>
   

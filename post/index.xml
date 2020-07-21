@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 化简的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 12 Jul 2020 10:30:50 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2020 20:12:07 +0800</lastBuildDate>
     
 	<atom:link href="https://xzyu0106.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我的第一篇hugo博客</title>
+      <link>https://xzyu0106.github.io/post/200721/</link>
+      <pubDate>Mon, 20 Jul 2020 20:12:07 +0800</pubDate>
+      
+      <guid>https://xzyu0106.github.io/post/200721/</guid>
+      <description>Hello World 之前一直没有做网络笔记的习惯，也很少在一个专门的地方里记录自己学习到的知识点，疫情期间就利用了hugo+github搭建了这个博客，但是因为是挂在github上，一个是不方便其次网速也太慢，现在迁移到了阿里云上，并经过两周的备案有了自己的域名（化简那头鲸鱼 simplifyth</description>
+    </item>
     
     <item>
       <title>博客说明</title>
@@ -58,56 +67,38 @@
     
     <item>
       <title>日常接触到的小tip记录</title>
-      <link>https://xzyu0106.github.io/post/%E8%AE%B0%E5%BD%95/</link>
+      <link>https://xzyu0106.github.io/post/200302%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Mon, 02 Mar 2020 10:30:50 +0800</pubDate>
       
-      <guid>https://xzyu0106.github.io/post/%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://xzyu0106.github.io/post/200302%E8%AE%B0%E5%BD%95/</guid>
       <description>在用户目录下生成公钥私钥对 ssh-keygen -t rsa</description>
     </item>
     
     <item>
       <title>kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（3）—— 搭建istio</title>
-      <link>https://xzyu0106.github.io/post/4/</link>
+      <link>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA3/</link>
       <pubDate>Sun, 01 Mar 2020 23:43:14 +0800</pubDate>
       
-      <guid>https://xzyu0106.github.io/post/4/</guid>
+      <guid>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA3/</guid>
       <description>(win10 + virtualbox6.0 + centos7.6.1810 + docker18.09.8 + kubernetes1.15.1 + istio1.2.3) 本系列分为三章，第一章是创建虚拟机、docker、kubernetes等一些基础设施；第二章是在此基础上创建一个三节点的kubernetes集群；第三章是再在之上搭建istio服务网格。 本文参考了大量其他优秀作者的创作（已经在开头列出），自己从零开始，慢慢搭</description>
     </item>
     
     <item>
       <title>kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（2）—— 搭建kubernetes集群</title>
-      <link>https://xzyu0106.github.io/post/3/</link>
+      <link>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA2/</link>
       <pubDate>Sun, 01 Mar 2020 23:43:11 +0800</pubDate>
       
-      <guid>https://xzyu0106.github.io/post/3/</guid>
+      <guid>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA2/</guid>
       <description>(win10 + virtualbox6.0 + centos7.6.1810 + docker18.09.8 + kubernetes1.15.1 + istio1.2.3) 本系列分为三章，第一章是创建虚拟机、docker、kubernetes等一些基础设施；第二章是在此基础上创建一个三节点的kubernetes集群；第三章是再在之上搭建istio服务网格。 本文参考了大量其他优秀作者的创作（已经在开头列出），自己从零开始，慢慢搭</description>
     </item>
     
     <item>
       <title>kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（1）—— 前期准备、安装docker、kubernetes</title>
-      <link>https://xzyu0106.github.io/post/2/</link>
+      <link>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA1/</link>
       <pubDate>Sun, 01 Mar 2020 23:40:13 +0800</pubDate>
       
-      <guid>https://xzyu0106.github.io/post/2/</guid>
+      <guid>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA1/</guid>
       <description>(win10 + virtualbox6.0 + centos7.6.1810 + docker18.09.8 + kubernetes1.15.1 + istio1.2.3) 本系列分为三章，第一章是创建虚拟机、docker、kubernetes等一些基础设施；第二章是在此基础上创建一个三节点的kubernetes集群；第三章是再在之上搭建istio服务网格。 本文参考了大量其他优秀作者的创作（已经在开头列出），自己从零开始，慢慢搭</description>
-    </item>
-    
-    <item>
-      <title>Hugo_operation_manual</title>
-      <link>https://xzyu0106.github.io/post/k8s%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B0%83%E5%BA%A6%E5%99%A8%E5%AE%9E%E8%B7%B5/</link>
-      <pubDate>Sun, 01 Mar 2020 10:30:50 +0800</pubDate>
-      
-      <guid>https://xzyu0106.github.io/post/k8s%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B0%83%E5%BA%A6%E5%99%A8%E5%AE%9E%E8%B7%B5/</guid>
-      <description>哦豁</description>
-    </item>
-    
-    <item>
-      <title>Hugo_operation_manual</title>
-      <link>https://xzyu0106.github.io/post/linux%E6%89%80%E9%81%87%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
-      <pubDate>Sun, 01 Mar 2020 10:30:50 +0800</pubDate>
-      
-      <guid>https://xzyu0106.github.io/post/linux%E6%89%80%E9%81%87%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
-      <description>哦豁</description>
     </item>
     
     <item>
@@ -117,15 +108,6 @@
       
       <guid>https://xzyu0106.github.io/post/hugo_operation_manual/</guid>
       <description>本篇博客用来记录搭建hugo后，发布新博客的一些基础操作，一切操作基于win10+hugo+git，为了方便快捷，也可以根据本博客自己写一个脚本，一键发布。 1 win+r接着cmd进入命令行界面，接着cd进入myblog目录 2 创建新博客 hugo new post\hugo_operation_manual.md 来生成新的博客，博客名为hugo_ope</description>
-    </item>
-    
-    <item>
-      <title>我的第一篇hugo博客</title>
-      <link>https://xzyu0106.github.io/post/1/</link>
-      <pubDate>Sat, 29 Feb 2020 20:12:07 +0800</pubDate>
-      
-      <guid>https://xzyu0106.github.io/post/1/</guid>
-      <description>Hello World 之前一直没有做网络笔记的习惯，也很少在博客里记录自己学习到的知识点，唯有聊聊几篇在CSDN里，今天（2020年3月）开始慢慢将平时所学放到这里，之前在其他地方记录的东西也会慢慢挪过来！ 一方面是方便记忆，另一方面则是为了阶段性地审视自己所学到的知识。 君子坐而论道，少年起而行之。</description>
     </item>
     
     <item>

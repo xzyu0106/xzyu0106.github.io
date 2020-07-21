@@ -13,10 +13,10 @@
     
     <item>
       <title>日常接触到的小tip记录</title>
-      <link>https://xzyu0106.github.io/post/%E8%AE%B0%E5%BD%95/</link>
+      <link>https://xzyu0106.github.io/post/200302%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Mon, 02 Mar 2020 10:30:50 +0800</pubDate>
       
-      <guid>https://xzyu0106.github.io/post/%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://xzyu0106.github.io/post/200302%E8%AE%B0%E5%BD%95/</guid>
       <description>在用户目录下生成公钥私钥对 ssh-keygen -t rsa</description>
     </item>
     

@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>k8s安装 on 化简的博客</title>
-    <link>https://xzyu0106.github.io/tags/k8s%E5%AE%89%E8%A3%85/</link>
+    <link>www.simplifythewhale.com/tags/k8s%E5%AE%89%E8%A3%85/</link>
     <description>Recent content in k8s安装 on 化简的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 01 Mar 2020 23:43:14 +0800</lastBuildDate>
     
-	<atom:link href="https://xzyu0106.github.io/tags/k8s%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="www.simplifythewhale.com/tags/k8s%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（3）—— 搭建istio</title>
-      <link>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA3/</link>
+      <link>www.simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA3/</link>
       <pubDate>Sun, 01 Mar 2020 23:43:14 +0800</pubDate>
       
-      <guid>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA3/</guid>
+      <guid>www.simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA3/</guid>
       <description>(win10 + virtualbox6.0 + centos7.6.1810 + docker18.09.8 + kubernetes1.15.1 + istio1.2.3) 本系列分为三章，第一章是创建虚拟机、docker、kubernetes等一些基础设施；第二章是在此基础上创建一个三节点的kubernetes集群；第三章是再在之上搭建istio服务网格。 本文参考了大量其他优秀作者的创作（已经在开头列出），自己从零开始，慢慢搭</description>
     </item>
     
     <item>
       <title>kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（2）—— 搭建kubernetes集群</title>
-      <link>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA2/</link>
+      <link>www.simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA2/</link>
       <pubDate>Sun, 01 Mar 2020 23:43:11 +0800</pubDate>
       
-      <guid>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA2/</guid>
+      <guid>www.simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA2/</guid>
       <description>(win10 + virtualbox6.0 + centos7.6.1810 + docker18.09.8 + kubernetes1.15.1 + istio1.2.3) 本系列分为三章，第一章是创建虚拟机、docker、kubernetes等一些基础设施；第二章是在此基础上创建一个三节点的kubernetes集群；第三章是再在之上搭建istio服务网格。 本文参考了大量其他优秀作者的创作（已经在开头列出），自己从零开始，慢慢搭</description>
     </item>
     
     <item>
       <title>kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（1）—— 前期准备、安装docker、kubernetes</title>
-      <link>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA1/</link>
+      <link>www.simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA1/</link>
       <pubDate>Sun, 01 Mar 2020 23:40:13 +0800</pubDate>
       
-      <guid>https://xzyu0106.github.io/post/200301k8s%E6%90%AD%E5%BB%BA1/</guid>
+      <guid>www.simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA1/</guid>
       <description>(win10 + virtualbox6.0 + centos7.6.1810 + docker18.09.8 + kubernetes1.15.1 + istio1.2.3) 本系列分为三章，第一章是创建虚拟机、docker、kubernetes等一些基础设施；第二章是在此基础上创建一个三节点的kubernetes集群；第三章是再在之上搭建istio服务网格。 本文参考了大量其他优秀作者的创作（已经在开头列出），自己从零开始，慢慢搭</description>
     </item>
     

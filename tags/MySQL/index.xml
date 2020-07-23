@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQL on 化简的博客</title>
-    <link>www.simplifythewhale.com/tags/MySQL/</link>
+    <link>https://simplifythewhale.com/tags/MySQL/</link>
     <description>Recent content in MySQL on 化简的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 07 Mar 2020 11:30:50 +0800</lastBuildDate>
     
-	<atom:link href="www.simplifythewhale.com/tags/MySQL/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://simplifythewhale.com/tags/MySQL/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MySQL遇到的问题汇总</title>
-      <link>www.simplifythewhale.com/post/mysql%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <link>https://simplifythewhale.com/post/mysql%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
       <pubDate>Sat, 07 Mar 2020 11:30:50 +0800</pubDate>
       
-      <guid>www.simplifythewhale.com/post/mysql%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://simplifythewhale.com/post/mysql%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>ERROR 2013 (HY000): Lost connection to MySQL server at &amp;lsquo;reading initial communication packet&amp;rsquo;, system error: 0 这个目前的解决方法是重启MySQL服务。。。 ERROR 2013 (HY000): Lost connection to MySQL server at &amp;lsquo;reading authorization packet&amp;rsquo;, system error: 0 进入MySQL命令行 然后将connect_timeout设置高一点，比如60。</description>
     </item>
     
     <item>
       <title>持久化端口映射设置</title>
-      <link>www.simplifythewhale.com/post/%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</link>
+      <link>https://simplifythewhale.com/post/%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</link>
       <pubDate>Sat, 07 Mar 2020 10:30:50 +0800</pubDate>
       
-      <guid>www.simplifythewhale.com/post/%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</guid>
+      <guid>https://simplifythewhale.com/post/%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</guid>
       <description>问题：之前在做MySQL远程操作的时候，里面有用到端口映射，但是非常不稳定，所以本文来研究怎么将端口映射保持持久化。 本文所做的工作是将端口映射持久化 情景：内网服务器A，公网服务器B，将A的3306端口映射到B的23306端口。 两种方案，一种是一次性的，再次开关机即消失，另一种是永</description>
     </item>
     
     <item>
       <title>MySQL的安装及特定情境下的数据库远程操作</title>
-      <link>www.simplifythewhale.com/post/%E5%AE%89%E8%A3%85mysql/</link>
+      <link>https://simplifythewhale.com/post/%E5%AE%89%E8%A3%85mysql/</link>
       <pubDate>Fri, 06 Mar 2020 10:30:50 +0800</pubDate>
       
-      <guid>www.simplifythewhale.com/post/%E5%AE%89%E8%A3%85mysql/</guid>
+      <guid>https://simplifythewhale.com/post/%E5%AE%89%E8%A3%85mysql/</guid>
       <description>说一下我要做的事情：目前在内网有一台服务器A，服务器A可以连接到阿里云B，而我想在本地电脑C中使用navicat软件给服务器A创建MySQL数据库。 最终思路是将服务器A的3306端口映射到阿里云B的端口23306（随意取的），然后使用navicat连接阿里云B的端口23306，达</description>
     </item>
     

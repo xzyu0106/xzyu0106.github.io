@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on 化简的博客</title>
-    <link>www.simplifythewhale.com/tools/</link>
+    <link>https://simplifythewhale.com/tools/</link>
     <description>Recent content in Tools on 化简的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 08 Mar 2020 20:12:07 +0800</lastBuildDate>
     
-	<atom:link href="www.simplifythewhale.com/tools/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://simplifythewhale.com/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>壁纸网站推荐</title>
-      <link>www.simplifythewhale.com/tools/%E5%A3%81%E7%BA%B8/</link>
+      <link>https://simplifythewhale.com/tools/%E5%A3%81%E7%BA%B8/</link>
       <pubDate>Sun, 08 Mar 2020 20:12:07 +0800</pubDate>
       
-      <guid>www.simplifythewhale.com/tools/%E5%A3%81%E7%BA%B8/</guid>
+      <guid>https://simplifythewhale.com/tools/%E5%A3%81%E7%BA%B8/</guid>
       <description>wallhaven是一个目前为止我遇到的最棒的壁纸库了（其实是没话找话充实一下不同类型的内容，别的以后有空再补充），记录一下里面壁纸最简单的下载方式： 点开图片，点击两下图片就是最清晰的，右键保存。</description>
     </item>
     

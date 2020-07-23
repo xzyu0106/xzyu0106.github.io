@@ -24,26 +24,3 @@ jobs:
         username: ${{ secrets.ALIYUN_USER }}
         password: ${{ secrets.ALIYUN_PASSWORD }}
         script: bash /home/del.sh
-
-    - name: scp pipeline
-      uses: cross-the-world/scp-pipeline@master
-      with:
-        host: ${{ secrets.ALIYUN_HOST }}
-        user: ${{ secrets.ALIYUN_HOST }}
-        pass: ${{ secrets.ALIYUN_PASSWORD }}
-        port: 22
-        connect_timeout: 10s
-        local: './*'
-        remote: /home/hugo/
-        scp: |
-          './*' => "/home/hugo/"
-
-
-    - name: local remote scp
-      uses: cross-the-world/scp-pipeline@master
-      with:
-        host: ${{ secrets.ALIYUN_HOST }}
-        user: ${{ secrets.ALIYUN_USER }}
-        pass: ${{ secrets.ALIYUN_PASSWORD }}
-        local: "./images/1*"
-        remote: /home/hugo/

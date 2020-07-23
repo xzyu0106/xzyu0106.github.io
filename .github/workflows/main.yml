@@ -33,10 +33,10 @@ jobs:
         pass: ${{ secrets.ALIYUN_PASSWORD }}
         port: 22
         connect_timeout: 10s
-        local: '*'
+        local: './*'
         remote: /home/hugo/
         scp: |
-         "." => "/home/hugo/"
+          './*' => "/home/hugo/"
 
 
     - name: local remote scp
@@ -45,5 +45,5 @@ jobs:
         host: ${{ secrets.ALIYUN_HOST }}
         user: ${{ secrets.ALIYUN_USER }}
         pass: ${{ secrets.ALIYUN_PASSWORD }}
-        local: "."
-        remote: /home/hugo
+        local: "./images/1*"
+        remote: /home/hugo/

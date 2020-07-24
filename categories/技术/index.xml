@@ -6,18 +6,18 @@
     <description>Recent content in 技术 on 化简的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 12 Jul 2020 10:30:50 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2020 10:30:50 +0800</lastBuildDate>
     
 	<atom:link href="https://simplifythewhale.com/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>博客说明</title>
-      <link>https://simplifythewhale.com/post/200712%E8%AF%B4%E6%98%8E/</link>
-      <pubDate>Sun, 12 Jul 2020 10:30:50 +0800</pubDate>
+      <title>日常接触到的小tip记录</title>
+      <link>https://simplifythewhale.com/post/200302%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 02 Mar 2020 10:30:50 +0800</pubDate>
       
-      <guid>https://simplifythewhale.com/post/200712%E8%AF%B4%E6%98%8E/</guid>
-      <description>最近在忙着做微服务架构下的任务调度工作，所以暂时没有时间打理博客啦，说起来自从自己搭建了hugo博客之后好像就没怎么管过，一直在忙各种项目任务，等有空了一定把本地的笔记和写在其他地方的笔记迁移过来，把这里作为一个主站。 嗯！！！</description>
+      <guid>https://simplifythewhale.com/post/200302%E8%AE%B0%E5%BD%95/</guid>
+      <description>在用户目录下生成公钥私钥对 ssh-keygen -t rsa</description>
     </item>
     
   </channel>

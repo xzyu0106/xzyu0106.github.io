@@ -13,55 +13,46 @@
     
     <item>
       <title>我的个人空间/博客说明</title>
-      <link>https://simplifythewhale.com/post/200721/</link>
+      <link>https://simplifythewhale.com/post/200720%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%A9%BA%E9%97%B4%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/</link>
       <pubDate>Mon, 20 Jul 2020 20:12:07 +0800</pubDate>
       
-      <guid>https://simplifythewhale.com/post/200721/</guid>
+      <guid>https://simplifythewhale.com/post/200720%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%A9%BA%E9%97%B4%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/</guid>
       <description>Hello World 之前一直没有做网络笔记的习惯，也很少在一个专门的地方里记录自己学习到的知识点，疫情期间就利用了hugo+github搭建了这个博客，但是因为是挂在github上，一个是不方便其次网速也太慢，现在迁移到了阿里云上，并经过两周的备案有了自己的域名（化简那头鲸鱼 simplifyth</description>
     </item>
     
     <item>
-      <title>博客说明</title>
-      <link>https://simplifythewhale.com/post/200712%E8%AF%B4%E6%98%8E/</link>
-      <pubDate>Sun, 12 Jul 2020 10:30:50 +0800</pubDate>
-      
-      <guid>https://simplifythewhale.com/post/200712%E8%AF%B4%E6%98%8E/</guid>
-      <description>最近在忙着做微服务架构下的任务调度工作，所以暂时没有时间打理博客啦，说起来自从自己搭建了hugo博客之后好像就没怎么管过，一直在忙各种项目任务，等有空了一定把本地的笔记和写在其他地方的笔记迁移过来，把这里作为一个主站。 嗯！！！</description>
-    </item>
-    
-    <item>
       <title>MySQL遇到的问题汇总</title>
-      <link>https://simplifythewhale.com/post/mysql%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <link>https://simplifythewhale.com/post/200317mysql%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
       <pubDate>Sat, 07 Mar 2020 11:30:50 +0800</pubDate>
       
-      <guid>https://simplifythewhale.com/post/mysql%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://simplifythewhale.com/post/200317mysql%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>ERROR 2013 (HY000): Lost connection to MySQL server at &amp;lsquo;reading initial communication packet&amp;rsquo;, system error: 0 这个目前的解决方法是重启MySQL服务。。。 ERROR 2013 (HY000): Lost connection to MySQL server at &amp;lsquo;reading authorization packet&amp;rsquo;, system error: 0 进入MySQL命令行 然后将connect_timeout设置高一点，比如60。</description>
     </item>
     
     <item>
       <title>持久化端口映射设置</title>
-      <link>https://simplifythewhale.com/post/%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</link>
+      <link>https://simplifythewhale.com/post/200307%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</link>
       <pubDate>Sat, 07 Mar 2020 10:30:50 +0800</pubDate>
       
-      <guid>https://simplifythewhale.com/post/%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</guid>
+      <guid>https://simplifythewhale.com/post/200307%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</guid>
       <description>问题：之前在做MySQL远程操作的时候，里面有用到端口映射，但是非常不稳定，所以本文来研究怎么将端口映射保持持久化。 本文所做的工作是将端口映射持久化 情景：内网服务器A，公网服务器B，将A的3306端口映射到B的23306端口。 两种方案，一种是一次性的，再次开关机即消失，另一种是永</description>
     </item>
     
     <item>
       <title>MySQL的安装及特定情境下的数据库远程操作</title>
-      <link>https://simplifythewhale.com/post/%E5%AE%89%E8%A3%85mysql/</link>
+      <link>https://simplifythewhale.com/post/200306%E5%AE%89%E8%A3%85mysql/</link>
       <pubDate>Fri, 06 Mar 2020 10:30:50 +0800</pubDate>
       
-      <guid>https://simplifythewhale.com/post/%E5%AE%89%E8%A3%85mysql/</guid>
+      <guid>https://simplifythewhale.com/post/200306%E5%AE%89%E8%A3%85mysql/</guid>
       <description>说一下我要做的事情：目前在内网有一台服务器A，服务器A可以连接到阿里云B，而我想在本地电脑C中使用navicat软件给服务器A创建MySQL数据库。 最终思路是将服务器A的3306端口映射到阿里云B的端口23306（随意取的），然后使用navicat连接阿里云B的端口23306，达</description>
     </item>
     
     <item>
       <title>golang下载安装</title>
-      <link>https://simplifythewhale.com/post/golang%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</link>
+      <link>https://simplifythewhale.com/post/200303golang%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</link>
       <pubDate>Tue, 03 Mar 2020 10:30:50 +0800</pubDate>
       
-      <guid>https://simplifythewhale.com/post/golang%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://simplifythewhale.com/post/200303golang%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</guid>
       <description>备忘录~因为总是要重装go，所以记录一下 centos 7, golang 1.14 安装 golang下载安装可直接看官网 https://studygolang.com/dl 但是在配置环境变量时，做如下配置 vi /etc/profile export GOROOT=/usr/local/go #设置为go安装的路径 export GOPATH=/usr/local/gopath #GO 项目路径(看个人爱好，我觉得这样舒服一点。。。) export PATH=$PATH:$GOPATH source /etc/profile #生效文件 使用 使用go mod 管理项目，就不需要非得把项目放到GOPATH指</description>
     </item>
     
@@ -103,19 +94,19 @@
     
     <item>
       <title>Hugo的基本操作</title>
-      <link>https://simplifythewhale.com/post/hugo_operation_manual/</link>
+      <link>https://simplifythewhale.com/post/200301hugo_operation_manual/</link>
       <pubDate>Sun, 01 Mar 2020 10:30:50 +0800</pubDate>
       
-      <guid>https://simplifythewhale.com/post/hugo_operation_manual/</guid>
+      <guid>https://simplifythewhale.com/post/200301hugo_operation_manual/</guid>
       <description>本篇博客用来记录搭建hugo后，发布新博客的一些基础操作，一切操作基于win10+hugo+git，为了方便快捷，也可以根据本博客自己写一个脚本，一键发布。 1 win+r接着cmd进入命令行界面，接着cd进入myblog目录 2 创建新博客 hugo new post\hugo_operation_manual.md 来生成新的博客，博客名为hugo_ope</description>
     </item>
     
     <item>
       <title>关于java中的void</title>
-      <link>https://simplifythewhale.com/post/200219java%E6%8E%A2%E7%A9%B6/</link>
+      <link>https://simplifythewhale.com/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/</link>
       <pubDate>Wed, 19 Feb 2020 06:43:50 +0800</pubDate>
       
-      <guid>https://simplifythewhale.com/post/200219java%E6%8E%A2%E7%A9%B6/</guid>
+      <guid>https://simplifythewhale.com/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/</guid>
       <description>最近在写java代码的时候，忽然对void这个关键字起了好奇，之前一直是带着目的一边做事情一边学习，只是当作void就是空，在方法申明的时候表示该方法没有返回值。 今天特地去追本溯源了一下，下面是资料结果 首先我们知道java是一种强类型的语言，从方法的声明语法可以看出每个方法必须要</description>
     </item>
     

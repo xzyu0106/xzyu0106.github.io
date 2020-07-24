@@ -13,11 +13,29 @@
     
     <item>
       <title>golang下载安装</title>
-      <link>https://simplifythewhale.com/post/golang%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</link>
+      <link>https://simplifythewhale.com/post/200303golang%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</link>
       <pubDate>Tue, 03 Mar 2020 10:30:50 +0800</pubDate>
       
-      <guid>https://simplifythewhale.com/post/golang%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://simplifythewhale.com/post/200303golang%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</guid>
       <description>备忘录~因为总是要重装go，所以记录一下 centos 7, golang 1.14 安装 golang下载安装可直接看官网 https://studygolang.com/dl 但是在配置环境变量时，做如下配置 vi /etc/profile export GOROOT=/usr/local/go #设置为go安装的路径 export GOPATH=/usr/local/gopath #GO 项目路径(看个人爱好，我觉得这样舒服一点。。。) export PATH=$PATH:$GOPATH source /etc/profile #生效文件 使用 使用go mod 管理项目，就不需要非得把项目放到GOPATH指</description>
+    </item>
+    
+    <item>
+      <title>日常接触到的小tip记录</title>
+      <link>https://simplifythewhale.com/post/200302%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 02 Mar 2020 10:30:50 +0800</pubDate>
+      
+      <guid>https://simplifythewhale.com/post/200302%E8%AE%B0%E5%BD%95/</guid>
+      <description>在用户目录下生成公钥私钥对 ssh-keygen -t rsa</description>
+    </item>
+    
+    <item>
+      <title>Hugo的基本操作</title>
+      <link>https://simplifythewhale.com/post/200301hugo_operation_manual/</link>
+      <pubDate>Sun, 01 Mar 2020 10:30:50 +0800</pubDate>
+      
+      <guid>https://simplifythewhale.com/post/200301hugo_operation_manual/</guid>
+      <description>本篇博客用来记录搭建hugo后，发布新博客的一些基础操作，一切操作基于win10+hugo+git，为了方便快捷，也可以根据本博客自己写一个脚本，一键发布。 1 win+r接着cmd进入命令行界面，接着cd进入myblog目录 2 创建新博客 hugo new post\hugo_operation_manual.md 来生成新的博客，博客名为hugo_ope</description>
     </item>
     
   </channel>

@@ -13,10 +13,10 @@
     
     <item>
       <title>关于java中的void</title>
-      <link>https://simplifythewhale.com/post/200219java%E6%8E%A2%E7%A9%B6/</link>
+      <link>https://simplifythewhale.com/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/</link>
       <pubDate>Wed, 19 Feb 2020 06:43:50 +0800</pubDate>
       
-      <guid>https://simplifythewhale.com/post/200219java%E6%8E%A2%E7%A9%B6/</guid>
+      <guid>https://simplifythewhale.com/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/</guid>
       <description>最近在写java代码的时候，忽然对void这个关键字起了好奇，之前一直是带着目的一边做事情一边学习，只是当作void就是空，在方法申明的时候表示该方法没有返回值。 今天特地去追本溯源了一下，下面是资料结果 首先我们知道java是一种强类型的语言，从方法的声明语法可以看出每个方法必须要</description>
     </item>
     

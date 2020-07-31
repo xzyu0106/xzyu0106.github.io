@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 化简的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 20 Jul 2020 20:12:07 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2020 10:30:50 +0800</lastBuildDate>
     
 	<atom:link href="https://simplifythewhale.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>排序算法</title>
+      <link>https://simplifythewhale.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Fri, 31 Jul 2020 10:30:50 +0800</pubDate>
+      
+      <guid>https://simplifythewhale.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>鸽子</title>

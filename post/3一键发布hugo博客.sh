@@ -9,6 +9,10 @@ hugo --theme=maupassant --baseUrl="https://simplifythewhale.com" --buildDrafts
 
 sleep 5
 
+rm -rf ./static/images
+
+sleep 2
+
 cd public
 
 git config --global core.autocrlf false
@@ -33,6 +37,3 @@ sleep 20
 
 scp -r D:/hugo/sites/myblog/public/* root@121.41.229.169:/home/hugo
 
-sleep 2
-
-rm -rf ./static/images

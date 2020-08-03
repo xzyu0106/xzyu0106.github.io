@@ -225,9 +225,7 @@
 <p>写在开始，我的笔试/面试系列博客有些内容是网络上查找的资料。这些资料里，有很多都是github上面的，平时查看因为网速或是手机原因很不方便，而且资料颇杂，所以我就统一搬运到这里来了，如果有冒犯之处可以随时和我联系，我会立即删除。记录下来只是为了方便平时复习的时候查看，放在一起要简单方便一点。希望大家都可以心想事成~</p>
 </blockquote>
 <h2 id="时间复杂度">时间复杂度</h2>
-<p><img src="/images/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6.png" alt="wechat"></p>
-<p>asdfsad</p>
-<p><img src="images/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6.png" alt="wechat"></p>
+<p><img src="../post_images/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6.png" alt="wechat"></p>
 <h2 id="1-冒泡排序">1 冒泡排序</h2>
 <ul>
 <li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
@@ -235,7 +233,7 @@
 <li>针对所有的元素重复以上的步骤，除了最后一个。</li>
 <li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
 </ul>
-<p><img src="post_images/%E5%86%92%E6%B3%A1.gif" alt="maopao"></p>
+<p><img src="../post_images/%E5%86%92%E6%B3%A1.gif" alt="maopao"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> 1<span style="color:#75715e">// Java 代码实现
 </span><span style="color:#75715e"></span> 2public <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BubbleSort</span> <span style="color:#66d9ef">implements</span> IArraySort <span style="color:#f92672">{</span>
  3
@@ -307,7 +305,7 @@
 <li>将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。</li>
 <li>从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）</li>
 </ul>
-<p><img src="./post_images/%E6%8F%92%E5%85%A5.gif" alt="charu"></p>
+<p><img src="../post_images/%E6%8F%92%E5%85%A5.gif" alt="charu"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> 1<span style="color:#75715e">//Java 代码实现
 </span><span style="color:#75715e"></span> 2public <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InsertSort</span> <span style="color:#66d9ef">implements</span> IArraySort <span style="color:#f92672">{</span>
  3
@@ -345,7 +343,7 @@
 <li>按增量序列个数 k，对序列进行 k 趟排序；</li>
 <li>每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</li>
 </ul>
-<p><img src="post_images/xier.gif" alt="xier"></p>
+<p><img src="../post_images/xier.gif" alt="xier"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> 1<span style="color:#75715e">//Java 代码实现
 </span><span style="color:#75715e"></span>     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MergeSort</span> <span style="color:#66d9ef">implements</span> IArraySort <span style="color:#f92672">{</span>
  2
@@ -400,7 +398,7 @@
 <li>重复步骤 3 直到某一指针达到序列尾；</li>
 <li>将另一序列剩下的所有元素直接复制到合并序列尾。</li>
 </ul>
-<p><img src="post_images/1940317-d3d400686bc61c30.gif" alt="image"></p>
+<p><img src="../post_images/1940317-d3d400686bc61c30.gif" alt="image"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MergeSort</span> <span style="color:#66d9ef">implements</span> IArraySort <span style="color:#f92672">{</span>
 
     <span style="color:#a6e22e">@Override</span>
@@ -457,7 +455,7 @@
 ②同理,当从队首开始向队尾进行扫描时,如果a[low] &lt; tmp,则low++,但如果a[low] &gt;  tmp了,则就需要将low位置的值赋值给high位置,即arr[low]  = arr[high],同时将数组扫描方式换为由队尾向队首进行扫描.
 ③不断重复①和②,直到low&gt;=high时(其实是low=high),low或high的位置就是该基准数据在数组中的正确索引位置.</p>
 <p>然后可以对左右两边的数据分别再次进行快排。</p>
-<p><img src="post_images/kuaipai.gif" alt="kuaipai"></p>
+<p><img src="../post_images/kuaipai.gif" alt="kuaipai"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> 1<span style="color:#75715e">//Java 代码实现
 </span><span style="color:#75715e"></span> 2public <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QuickSort</span> <span style="color:#66d9ef">implements</span> IArraySort <span style="color:#f92672">{</span>
  3
@@ -507,7 +505,7 @@
 <li>重复步骤 2，直到堆的尺寸为 1。</li>
 </ul>
 <p>可能不好理解，但是下面的动图很容易记忆。</p>
-<p><img src="post_images/dui.gif" alt="dui"></p>
+<p><img src="../post_images/dui.gif" alt="dui"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> 1<span style="color:#75715e">//Java 代码实现
 </span><span style="color:#75715e"></span> 2public <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HeapSort</span> <span style="color:#66d9ef">implements</span> IArraySort <span style="color:#f92672">{</span>
  3
@@ -568,7 +566,7 @@
 <li>最后输出目标整数序列，具体的逻辑是遍历数组 B，输出相应元素以及对应的个数</li>
 </ul>
 <p>同样不好理解，可以看下面的动图。</p>
-<p><img src="post_images/jishu.gif" alt="jishu"></p>
+<p><img src="../post_images/jishu.gif" alt="jishu"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> 1<span style="color:#75715e">//Java 代码实现
 </span><span style="color:#75715e"></span> 2public <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CountingSort</span> <span style="color:#66d9ef">implements</span> IArraySort <span style="color:#f92672">{</span>
  3
@@ -618,7 +616,7 @@
 <li>对每个不为空的桶中数据进行排序。</li>
 <li>拼接不为空的桶中数据，得到结果</li>
 </ul>
-<p><img src="post_images/tong.gif" alt="tong"></p>
+<p><img src="../post_images/tong.gif" alt="tong"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> 1<span style="color:#75715e">//Java 代码实现
 </span><span style="color:#75715e"></span> 2public <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BucketSort</span> <span style="color:#66d9ef">implements</span> IArraySort <span style="color:#f92672">{</span>
  3
@@ -690,7 +688,7 @@
 <li>从最低位开始，依次进行一次排序</li>
 <li>从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列</li>
 </ul>
-<p><img src="post_images/%E5%9F%BA%E6%95%B0.gif" alt="基数"></p>
+<p><img src="../post_images/%E5%9F%BA%E6%95%B0.gif" alt="基数"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> 1<span style="color:#75715e">//Java 代码实现
 </span><span style="color:#75715e"></span> 2public <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RadixSort</span> <span style="color:#66d9ef">implements</span> IArraySort <span style="color:#f92672">{</span>
  3

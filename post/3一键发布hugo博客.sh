@@ -3,9 +3,15 @@
 cd ..
 cd ..
 
+cp -rf ./content/post_images ./content/post/
+
+sleep 1
+
 hugo --theme=maupassant --baseUrl="https://simplifythewhale.com" --buildDrafts
 
 sleep 5
+
+rm -rf ./content/post/post_images
 
 cd public
 

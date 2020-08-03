@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>java贴士(第一弹)</title>
-      <link>https://simplifythewhale.com/post/200731java_tips/</link>
-      <pubDate>Fri, 31 Jul 2020 10:10:50 +0800</pubDate>
-      
-      <guid>https://simplifythewhale.com/post/200731java_tips/</guid>
-      <description>写在开始，我的笔试/面试系列博客有些内容是网络上查找的资料。这些资料里，有很多都是github上面的，平时查看因为网速或是手机原因很不方便，而且资料颇杂，所以我就统一搬运到这里来了，如果有冒犯之处可以随时和我联系，我会立即删除。记录下来只是为了方便平时复习的时候查看，放在一起要简</description>
-    </item>
-    
-    <item>
       <title>java贴士(第二弹)</title>
       <link>https://simplifythewhale.com/post/200801java_tips2/</link>
       <pubDate>Sat, 01 Aug 2020 10:10:50 +0800</pubDate>
@@ -35,6 +26,15 @@
       <pubDate>Fri, 31 Jul 2020 10:30:50 +0800</pubDate>
       
       <guid>https://simplifythewhale.com/post/200731%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
+      <description>写在开始，我的笔试/面试系列博客有些内容是网络上查找的资料。这些资料里，有很多都是github上面的，平时查看因为网速或是手机原因很不方便，而且资料颇杂，所以我就统一搬运到这里来了，如果有冒犯之处可以随时和我联系，我会立即删除。记录下来只是为了方便平时复习的时候查看，放在一起要简</description>
+    </item>
+    
+    <item>
+      <title>java贴士(第一弹)</title>
+      <link>https://simplifythewhale.com/post/200731java_tips/</link>
+      <pubDate>Fri, 31 Jul 2020 10:10:50 +0800</pubDate>
+      
+      <guid>https://simplifythewhale.com/post/200731java_tips/</guid>
       <description>写在开始，我的笔试/面试系列博客有些内容是网络上查找的资料。这些资料里，有很多都是github上面的，平时查看因为网速或是手机原因很不方便，而且资料颇杂，所以我就统一搬运到这里来了，如果有冒犯之处可以随时和我联系，我会立即删除。记录下来只是为了方便平时复习的时候查看，放在一起要简</description>
     </item>
     

@@ -3,6 +3,8 @@
 cd ..
 cd ..
 
+cp -rf ./content/post/images ./static/
+
 hugo --theme=maupassant --baseUrl="https://simplifythewhale.com" --buildDrafts
 
 sleep 5
@@ -30,3 +32,7 @@ git push -u origin master
 sleep 20
 
 scp -r D:/hugo/sites/myblog/public/* root@121.41.229.169:/home/hugo
+
+sleep 2
+
+rm -rf ./static/images

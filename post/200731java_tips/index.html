@@ -157,6 +157,7 @@
         <li><a href="#6-java-重写override与重载overload">6 Java 重写(Override)与重载(Overload)</a></li>
       </ul>
     </li>
+    <li><a href="#7-关于java中的override">7 关于java中的@Override</a></li>
   </ul>
 </nav>
     </div>
@@ -220,7 +221,7 @@
             <blockquote>
 <p>写在开始，我的笔试/面试系列博客有些内容是网络上查找的资料。这些资料里，有很多都是github上面的，平时查看因为网速或是手机原因很不方便，而且资料颇杂，所以我就统一搬运到这里来了，如果有冒犯之处可以随时和我联系，我会立即删除。记录下来只是为了方便平时复习的时候查看，放在一起要简单方便一点。希望大家都可以心想事成~</p>
 </blockquote>
-<p>之前一直在做项目，这两天才有时间来简单回顾一下java，本文主要记录一些java容易混肴的点。</p>
+<p>之前一直在做项目，这两天才有时间来简单回顾一下java，很多java的知识都有点模糊了，所以本文主要记录一些java容易混肴的点，把最近查过的点都记录下来。</p>
 <h3 id="1-length与length">1 .length()与.length</h3>
 <p>length是属性调用，length()是方法调用。 这要看对象的定义了，有时候属性是不暴露在外面的，非public，也就无法直接调用其属性。</p>
 <p>s.length是针对java中数组bai的，duzhilength是数组的一个属性，用来表示数组的长度
@@ -279,6 +280,23 @@ s.length()则是字符串的一个方法，用来返回字符串的长度的
 <li>(3)方法重载是一个类的多态性表现,而方法重写是子类与父类的一种多态性表现。</li>
 </ul>
 <p><img src="../post_images/over.png" alt="over"></p>
+<h2 id="7-关于java中的override">7 关于java中的@Override</h2>
+<p>@Override是伪代码,表示重写。(当然不写@Override也可以)，不过写上有如下好处:
+1、可以当注释用,方便阅读；
+2、编译器可以给你验证@Override下面的方法名是否是你父类中所有的，如果没有则报错。例如，你如果没写@Override，而你下面的方法名又写错了，这时你的编译器是可以编译通过的，因为编译器以为这个方法是你的子类中自己增加的方法。</p>
+<p>举例：在重写父类的onCreate时，在方法前面加上@Override 系统可以帮你检查方法的正确性。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>Bundle savedInstanceState<span style="color:#f92672">)</span>
+
+<span style="color:#f92672">{</span><span style="color:#960050;background-color:#1e0010">…</span><span style="color:#960050;background-color:#1e0010">…</span><span style="color:#f92672">.</span><span style="color:#f92672">}</span>
+</code></pre></div><p>这种写法是正确的，如果你写成：</p>
+<p>举例：在重写父类的onCreate时，在方法前面加上@Override 系统可以帮你检查方法的正确性。</p>
+<p>这种写法是正确的，如果你写成：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">oncreate</span><span style="color:#f92672">(</span>Bundle savedInstanceState<span style="color:#f92672">)</span>
+<span style="color:#f92672">{</span><span style="color:#960050;background-color:#1e0010">…</span><span style="color:#960050;background-color:#1e0010">…</span><span style="color:#f92672">.</span><span style="color:#f92672">}</span>
+</code></pre></div><p>编译器会报如下错误：The method oncreate(Bundle) of type HelloWorld must override or implement a supertype method，以确保你正确重写onCreate方法（因为oncreate应该为onCreate）。</p>
+<p>而如果你不加@Override，则编译器将不会检测出错误，而是会认为你为子类定义了一个新方法：oncreate</p>
 
         </div>
 
@@ -366,6 +384,10 @@ s.length()则是字符串的一个方法，用来返回字符串的长度的
     </li>
     
     <li>
+        <a href="https://simplifythewhale.com/post/200804javacompartator/" title="JAVA中comparator的使用">JAVA中comparator的使用</a>
+    </li>
+    
+    <li>
         <a href="https://simplifythewhale.com/post/200731%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="十大排序算法动画与解析">十大排序算法动画与解析</a>
     </li>
     
@@ -393,10 +415,6 @@ s.length()则是字符串的一个方法，用来返回字符串的长度的
         <a href="https://simplifythewhale.com/post/200302%E8%AE%B0%E5%BD%95/" title="日常接触到的小tip记录">日常接触到的小tip记录</a>
     </li>
     
-    <li>
-        <a href="https://simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA3/" title="kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（3）—— 搭建istio">kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（3）—— 搭建istio</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -412,7 +430,7 @@ s.length()则是字符串的一个方法，用来返回字符串的长度的
     
     <li><a href="https://simplifythewhale.com/categories/hugo/">hugo (1)</a></li>
     
-    <li><a href="https://simplifythewhale.com/categories/java%E6%8E%A2%E7%A9%B6/">java探究 (1)</a></li>
+    <li><a href="https://simplifythewhale.com/categories/java/">java (2)</a></li>
     
     <li><a href="https://simplifythewhale.com/categories/kubernetes/">kubernetes (3)</a></li>
     

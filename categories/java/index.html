@@ -6,24 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>关于java中的void | 化简的博客</title>
-    <meta property="og:title" content="关于java中的void - 化简的博客">
+    <title>java | 化简的博客</title>
+    <meta property="og:title" content="java - 化简的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2020-02-19T06:43:50&#43;08:00'>
-        
-        
-    <meta property="article:modified_time" content='2020-02-19T06:43:50&#43;08:00'>
         
     <meta name="Keywords" content="DRL,python,micro-service,scheduler">
-    <meta name="description" content="关于java中的void">
+    <meta name="description" content="java">
         
     <meta name="author" content="化简">
-    <meta property="og:url" content="https://simplifythewhale.com/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/">
+    <meta property="og:url" content="https://simplifythewhale.com/categories/java/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml+xml" href="https://simplifythewhale.com/categories/java/index.xml" title="化简的博客" />
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -60,7 +57,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://simplifythewhale.com">首页</a>
+                    <a class="" href="https://simplifythewhale.com">首页</a>
                     
                     <a  href="https://simplifythewhale.com/tools/" title="生活杂记">生活杂记</a>
                     
@@ -81,215 +78,68 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    <style type="text/css">
-    .post-toc {
-        position: fixed;
-        width: 200px;
-        margin-left: -210px;
-        padding: 5px 10px;
-        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
-        font-size: 12px;
-        border: 1px solid rgba(0, 0, 0, .07);
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.98);
-        background-clip: padding-box;
-        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
-        word-wrap: break-word;
-        white-space: nowrap;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        z-index: 999;
-        cursor: pointer;
-        max-height: 70%;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
+    
+    <h3 class="archive-title">
+        分类
+        <span class="keyword">java</span>
+        中的文章
+    </h3>
+    
 
-    .post-toc .post-toc-title {
-        width: 100%;
-        margin: 0 auto;
-        font-size: 20px;
-        font-weight: 400;
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    .post-toc .post-toc-content {
-        font-size: 15px;
-    }
-
-    .post-toc .post-toc-content>nav>ul {
-        margin: 10px 0;
-    }
-
-    .post-toc .post-toc-content ul {
-        padding-left: 20px;
-        list-style: square;
-        margin: 0.5em;
-        line-height: 1.8em;
-    }
-
-    .post-toc .post-toc-content ul ul {
-        padding-left: 15px;
-        display: none;
-    }
-
-    @media print,
-    screen and (max-width:1057px) {
-        .post-toc {
-            display: none;
-        }
-    }
-</style>
-<div class="post-toc" style="position: absolute; top: 188px;">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-        <nav id="TableOfContents"></nav>
-    </div>
-</div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var postToc = $(".post-toc");
-        if (postToc.length) {
-            var leftPos = $("#main").offset().left;
-            if(leftPos<220){
-                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
-            }
-
-            var t = postToc.offset().top - 20,
-                a = {
-                    start: {
-                        position: "absolute",
-                        top: t
-                    },
-                    process: {
-                        position: "fixed",
-                        top: 20
-                    },
-                };
-            $(window).scroll(function () {
-                var e = $(window).scrollTop();
-                e < t ? postToc.css(a.start) : postToc.css(a.process)
-            })
-        }
-    })
-</script>
+    
     <article class="post">
         <header>
-            <h1 class="post-title">关于java中的void</h1>
+            <h1 class="post-title">
+                <a href="https://simplifythewhale.com/post/200804javacompartator/">JAVA中comparator的使用</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年7月31日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='https://simplifythewhale.com/categories/java'>java</a>
+            
+        </div>
+        
+        <div class="post-content">
+            1.为什么写？ comparator 是javase中的接口，位于java.util包下，该接口抽象度极高，有必要掌握该接口的使用 大多数文章告诉大家comparator是用来排序，但我想说排序是comparator能实现的功能之一，他不仅限于排序 2.接口功能 该接口代表一个比较器，比较器具有可比性！大多……
+            <p class="readmore"><a href="https://simplifythewhale.com/post/200804javacompartator/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://simplifythewhale.com/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/">关于java中的void</a>
+            </h1>
         </header>
         <date class="post-meta meta-date">
             2020年2月19日
         </date>
         
-        <div class="post-meta">
-            <span>|</span>
+        <div class="post-meta meta-category">
+            |
             
-            <span class="meta-category"><a href='https://simplifythewhale.com/categories/java'>java</a></span>
+            <a href='https://simplifythewhale.com/categories/java'>java</a>
             
-        </div>
-        
-        
-        <div class="post-meta">
-            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
-                    阅读</span></span>
-        </div>
-        
-        
-        <div class="clear" style="display: none">
-            <div class="toc-article">
-                <div class="toc-title">文章目录</div>
-            </div>
         </div>
         
         <div class="post-content">
-            <p>最近在写java代码的时候，忽然对void这个关键字起了好奇，之前一直是带着目的一边做事情一边学习，只是当作void就是空，在方法申明的时候表示该方法没有返回值。</p>
-<p>今天特地去追本溯源了一下，下面是资料结果</p>
-<blockquote>
-<p>首先我们知道java是一种强类型的语言，从方法的声明语法可以看出每个方法必须要有返回值，需要确定方法的返回值类型，当定义方法使用void修饰的时候，也就是什么也不返回，由此可见void也应该算是一种数据类型；而我们知道java中常用的数据类型有8中基本数据类型、引用类型等；</p>
-<p>Void类是用final修饰的，说明不可以扩展，另外构造方法是私有的，不可以实例化；
-Void类是一个不可实例化的占位符类，用来保存一个引用代表了java关键字void的Class对象。</p>
-<p>如何终止void修饰的方法,如果想在方法中的任何地方终止执行，可以使用return后面不加任何返回值。</p>
-<p>public void getName() {
-String name = &ldquo;username&rdquo;;
-if(name != null)
-return;
-System.out.println(name);
-}
-————————————————
-版权声明：本文为CSDN博主「longzhoufeng」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/longzhoufeng/article/details/88868617</p>
-</blockquote>
-<blockquote>
-<p>void 是一种基本数据类型。
-而 Void 是 void 封装类型，API 上称其为“占位符（placeholder）”。
-看起来，Void 之于 void 类似于 Integer 之于 int。但并非如此，Void 比较特别：</p>
-<pre><code>它不可实例化
-它没有内置的类型实例，也没有可用的字面值
-</code></pre>
-<p>声明一个 Void 变量通常是没有什么意义的，因为没有可为其赋值的实例，注意不能用 void 为其赋值（void 是类型而不是值）。
-Void 变量唯一能持有的是 null。</p>
-<p>但也不是必需使用<code>Void.TYPE</code>，也可以用<code>void.class</code>。</p>
-<p>另外的使用场景一般都和泛型相关，可以参考相关说明。通常也只是提高了代码的可读性。</p>
-<p>总结来说，几乎很少会用到 Void 。</p>
-</blockquote>
-
-        </div>
-
-        
-<div class="post-archive">
-    <ul class="post-copyright">
-        <li><strong>原文作者：</strong><a rel="author" href="https://simplifythewhale.com">化简</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://simplifythewhale.com/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/">https://simplifythewhale.com/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/</a></li>
-        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
-    </ul>
-</div>
-<br/>
-
-
-
-        
-
-<div class="post-archive">
-    <h2>See Also</h2>
-    <ul class="listing">
-        
-        <li><a href="/archives/">归档</a></li>
-        
-        <li><a href="/about/">我啊</a></li>
-        
-        <li><a href="/search/">搜索</a></li>
-        
-    </ul>
-</div>
-
-
-        <div class="post-meta meta-tags">
-            
-            <ul class="clearfix">
-                
-                <li><a href='https://simplifythewhale.com/tags/%E7%AC%94%E8%AE%B0'>笔记</a></li>
-                
-            </ul>
-            
+            最近在写java代码的时候，忽然对void这个关键字起了好奇，之前一直是带着目的一边做事情一边学习，只是当作void就是空，在方法申明的时候表示该方法没有返回值。 今天特地去追本溯源了一下，下面是资料结果 首先我们知道java是一种强类型的语言，从方法的声明语法可以看出每个方法必须要……
+            <p class="readmore"><a href="https://simplifythewhale.com/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/">阅读全文</a></p>
         </div>
     </article>
     
-    
 
     
-    
-    <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
-            repo= " xzyu0106 / for-utterances"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-      </script>
-    </div>
-    
+
+
+
+
+
 </div>
 
                 </div>
@@ -446,17 +296,6 @@ Void 变量唯一能持有的是 null。</p>
     </div>
 </footer>
 
-
-    
-    <script type="text/javascript">
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [['$', '$']],
-                processEscapes: true
-                }
-            };
-    </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 <a id="rocket" href="#top"></a>

@@ -43,12 +43,27 @@
   </url>
   
   <url>
+    <loc>https://simplifythewhale.com/categories/java/</loc>
+    <lastmod>2020-07-31T10:30:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simplifythewhale.com/post/200804javacompartator/</loc>
+    <lastmod>2020-07-31T10:30:50+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://simplifythewhale.com/post/200731%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2020-07-31T10:30:50+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://simplifythewhale.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2020-07-31T10:30:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simplifythewhale.com/tags/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-07-31T10:30:50+08:00</lastmod>
   </url>
   
@@ -88,12 +103,12 @@
   </url>
   
   <url>
-    <loc>https://simplifythewhale.com/categories/MySQL/</loc>
+    <loc>https://simplifythewhale.com/tags/MySQL/</loc>
     <lastmod>2020-03-07T11:30:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://simplifythewhale.com/tags/MySQL/</loc>
+    <loc>https://simplifythewhale.com/categories/MySQL/</loc>
     <lastmod>2020-03-07T11:30:50+08:00</lastmod>
   </url>
   
@@ -173,17 +188,7 @@
   </url>
   
   <url>
-    <loc>https://simplifythewhale.com/categories/java%E6%8E%A2%E7%A9%B6/</loc>
-    <lastmod>2020-02-19T06:43:50+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://simplifythewhale.com/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/</loc>
-    <lastmod>2020-02-19T06:43:50+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://simplifythewhale.com/tags/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-02-19T06:43:50+08:00</lastmod>
   </url>
   

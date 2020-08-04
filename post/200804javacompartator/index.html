@@ -216,7 +216,8 @@
         </div>
         
         <div class="post-content">
-            <h3 id="1为什么写">1.为什么写？</h3>
+            <p>本文系<a href="https://blog.csdn.net/u012250875/article/details/55126531?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.channel_param">转载</a></p>
+<h3 id="1为什么写">1.为什么写？</h3>
 <ol>
 <li>comparator 是javase中的接口，位于java.util包下，该接口抽象度极高，有必要掌握该接口的使用</li>
 <li>大多数文章告诉大家comparator是用来排序，但我想说排序是comparator能实现的功能之一，他不仅限于排序</li>
@@ -236,139 +237,138 @@ Collections.sort(List&lt;T&gt; list,Comparator&lt;? super T&gt; c);12
 <blockquote>
 <p>talk is cheap show me the code</p>
 </blockquote>
-<pre><code>package com.java.demo;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.java.demo<span style="color:#f92672">;</span>
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-/**
- * @author puyf
- */
-public class SortTest {
-    class Dog{
-    public int age;
-    public String name;
-    public Dog(int age, String name) {
-        super();
-        this.age = age;
-        this.name = name;
-    }
-    @Override
-    public String toString() {
-        return &quot;Dog [age=&quot; + age + &quot;, name=&quot; + name + &quot;]&quot;;
-    }
-    }
-    public static void main(String[] args) {
-    List&lt;Dog&gt; list= new ArrayList&lt;&gt;();
-    list.add(new SortTest().new Dog(5, &quot;DogA&quot;));
-    list.add(new SortTest().new Dog(6, &quot;DogB&quot;));
-    list.add(new SortTest().new Dog(7, &quot;DogC&quot;));
-    Collections.sort(list, new Comparator&lt;Dog&gt;() {
+<span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Collections<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Comparator<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * @author puyf
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SortTest</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span><span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> String name<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Dog</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> age<span style="color:#f92672">,</span> String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Dog [age=&#34;</span> <span style="color:#f92672">+</span> age <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, name=&#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;]&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    List<span style="color:#f92672">&lt;</span>Dog<span style="color:#f92672">&gt;</span> list<span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> SortTest<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">new</span> Dog<span style="color:#f92672">(</span>5<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;DogA&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> SortTest<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">new</span> Dog<span style="color:#f92672">(</span>6<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;DogB&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> SortTest<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">new</span> Dog<span style="color:#f92672">(</span>7<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;DogC&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    Collections<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span><span style="color:#f92672">(</span>list<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Comparator<span style="color:#f92672">&lt;</span>Dog<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-        @Override
-        public int compare(Dog o1, Dog o2) {
-        return o2.age - o1.age;
-        }
-    });
-    System.out.println(&quot;给狗狗按照年龄倒序：&quot;+list);
-    Collections.sort(list, new Comparator&lt;Dog&gt;() {
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>Dog o1<span style="color:#f92672">,</span> Dog o2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> o2<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span> <span style="color:#f92672">-</span> o1<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;给狗狗按照年龄倒序：&#34;</span><span style="color:#f92672">+</span>list<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    Collections<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span><span style="color:#f92672">(</span>list<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Comparator<span style="color:#f92672">&lt;</span>Dog<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-        @Override
-        public int compare(Dog o1, Dog o2) {
-        return o1.name.compareTo(o2.name);
-        }
-    });
-    System.out.println(&quot;给狗狗按名字字母顺序排序：&quot;+list);
-    }
-}
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647
-</code></pre><p>2.分组
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>Dog o1<span style="color:#f92672">,</span> Dog o2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> o1<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>o2<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;给狗狗按名字字母顺序排序：&#34;</span><span style="color:#f92672">+</span>list<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>2.分组
 使用Comparator和for循环处理列表，来进行分类；通过调用者实现Comparator接口的比较逻辑，来告诉程序应该怎么比较，通过比较之后得结果来进行分组。比如生活中的拳击比赛，会有公斤级的概念，那么程序中应该实现的处理逻辑是只要两个人的体重在同一个区间则为同一组公斤级的选手。下面例子中分别按照狗狗的颜色和体重级别两个维度来进行分组，因此分组的核心逻辑其实就是比较逻辑。相面我抽了一个工具方法：dividerList,第一个参数为需要处理的数据源，第二参数是分组时的比较逻辑。</p>
-<pre><code>package com.java.demo;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.java.demo<span style="color:#f92672">;</span>
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-/**
- * @author puyf
- */
-public class GroupTest {
-    class Apple {
-    public String color;
-    public int weight;
+<span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Comparator<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * @author puyf
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GroupTest</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Apple</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> String color<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> weight<span style="color:#f92672">;</span>
 
-    public Apple(String color, int weight) {
-        super();
-        this.color = color;
-        this.weight = weight;
-    }
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Apple</span><span style="color:#f92672">(</span>String color<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> weight<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">weight</span> <span style="color:#f92672">=</span> weight<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    @Override
-    public String toString() {
-        return &quot;Apple [color=&quot; + color + &quot;, weight=&quot; + weight + &quot;]&quot;;
-    }
-    }
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Apple [color=&#34;</span> <span style="color:#f92672">+</span> color <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, weight=&#34;</span> <span style="color:#f92672">+</span> weight <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;]&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-    /**
-     * @author puyf
-     * @Description:按条件分组
-     * @param datas
-     * @param c
-     *            是否为同一组的判断标准
-     * @return
-     */
-    public static &lt;T&gt; List&lt;List&lt;T&gt;&gt; divider(Collection&lt;T&gt; datas, Comparator&lt;? super T&gt; c) {
-        List&lt;List&lt;T&gt;&gt; result = new ArrayList&lt;List&lt;T&gt;&gt;();
-        for (T t : datas) {
-            boolean isSameGroup = false;
-            for (int j = 0; j &lt; result.size(); j++) {
-                if (c.compare(t, result.get(j).get(0)) == 0) {
-                    isSameGroup = true;
-                    result.get(j).add(t);
-                    break;
-                }
-            }
-            if (!isSameGroup) {
-                // 创建
-                List&lt;T&gt; innerList = new ArrayList&lt;T&gt;();
-                result.add(innerList);
-                innerList.add(t);
-            }
-        }
-        return result;
-    }
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * @author puyf
+</span><span style="color:#75715e">     * @Description:按条件分组
+</span><span style="color:#75715e">     * @param datas
+</span><span style="color:#75715e">     * @param c
+</span><span style="color:#75715e">     *            是否为同一组的判断标准
+</span><span style="color:#75715e">     * @return
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> List<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">divider</span><span style="color:#f92672">(</span>Collection<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> datas<span style="color:#f92672">,</span> Comparator<span style="color:#f92672">&lt;</span><span style="color:#f92672">?</span> <span style="color:#66d9ef">super</span> T<span style="color:#f92672">&gt;</span> c<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        List<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>T t <span style="color:#f92672">:</span> datas<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">boolean</span> isSameGroup <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;</span> result<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span> j<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>c<span style="color:#f92672">.</span><span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>t<span style="color:#f92672">,</span> result<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>j<span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    isSameGroup <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+                    result<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>j<span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>t<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                    <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#f92672">!</span>isSameGroup<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#75715e">// 创建
+</span><span style="color:#75715e"></span>                List<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> innerList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                result<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>innerList<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                innerList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>t<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    public static void main(String[] args) {
-    List&lt;Apple&gt; list = new ArrayList&lt;&gt;();
-    list.add(new GroupTest().new Apple(&quot;红&quot;, 205));
-    list.add(new GroupTest().new Apple(&quot;红&quot;, 131));
-    list.add(new GroupTest().new Apple(&quot;绿&quot;, 248));
-    list.add(new GroupTest().new Apple(&quot;绿&quot;, 153));
-    list.add(new GroupTest().new Apple(&quot;黄&quot;, 119));
-    list.add(new GroupTest().new Apple(&quot;黄&quot;, 224));
-    List&lt;List&lt;Apple&gt;&gt; byColors = divider(list, new Comparator&lt;Apple&gt;() {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    List<span style="color:#f92672">&lt;</span>Apple<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> GroupTest<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">new</span> Apple<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;红&#34;</span><span style="color:#f92672">,</span> 205<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> GroupTest<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">new</span> Apple<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;红&#34;</span><span style="color:#f92672">,</span> 131<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> GroupTest<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">new</span> Apple<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;绿&#34;</span><span style="color:#f92672">,</span> 248<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> GroupTest<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">new</span> Apple<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;绿&#34;</span><span style="color:#f92672">,</span> 153<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> GroupTest<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">new</span> Apple<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;黄&#34;</span><span style="color:#f92672">,</span> 119<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> GroupTest<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">new</span> Apple<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;黄&#34;</span><span style="color:#f92672">,</span> 224<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    List<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Apple<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> byColors <span style="color:#f92672">=</span> divider<span style="color:#f92672">(</span>list<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Comparator<span style="color:#f92672">&lt;</span>Apple<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-        @Override
-        public int compare(Apple o1, Apple o2) {
-        // 按颜色分组
-        return o1.color.compareTo(o2.color);
-        }
-    });
-    System.out.println(&quot;按颜色分组&quot; + byColors);
-    List&lt;List&lt;Apple&gt;&gt; byWeight = divider(list, new Comparator&lt;Apple&gt;() {
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>Apple o1<span style="color:#f92672">,</span> Apple o2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 按颜色分组
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> o1<span style="color:#f92672">.</span><span style="color:#a6e22e">color</span><span style="color:#f92672">.</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>o2<span style="color:#f92672">.</span><span style="color:#a6e22e">color</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;按颜色分组&#34;</span> <span style="color:#f92672">+</span> byColors<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    List<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Apple<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> byWeight <span style="color:#f92672">=</span> divider<span style="color:#f92672">(</span>list<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Comparator<span style="color:#f92672">&lt;</span>Apple<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-        @Override
-        public int compare(Apple o1, Apple o2) {
-        // 按重量级
-
-        return (o1.weight / 100 == o2.weight / 100) ? 0 : 1;
-        }
-    });
-    System.out.println(&quot;按重量级分组&quot; + byWeight);
-    }
-}1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283
-</code></pre><p>结果如下（为了方便看，手动回车换行格式化了下）：
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>Apple o1<span style="color:#f92672">,</span> Apple o2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 按重量级
+</span><span style="color:#75715e"></span>
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>o1<span style="color:#f92672">.</span><span style="color:#a6e22e">weight</span> <span style="color:#f92672">/</span> 100 <span style="color:#f92672">=</span><span style="color:#f92672">=</span> o2<span style="color:#f92672">.</span><span style="color:#a6e22e">weight</span> <span style="color:#f92672">/</span> 100<span style="color:#f92672">)</span> <span style="color:#f92672">?</span> 0 <span style="color:#f92672">:</span> 1<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;按重量级分组&#34;</span> <span style="color:#f92672">+</span> byWeight<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>结果如下（为了方便看，手动回车换行格式化了下）：
 按颜色分组
 [
 [<br>

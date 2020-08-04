@@ -17,7 +17,7 @@
       <pubDate>Fri, 31 Jul 2020 10:30:50 +0800</pubDate>
       
       <guid>https://simplifythewhale.com/post/200804javacompartator/</guid>
-      <description>1.为什么写？ comparator 是javase中的接口，位于java.util包下，该接口抽象度极高，有必要掌握该接口的使用 大多数文章告诉大家comparator是用来排序，但我想说排序是comparator能实现的功能之一，他不仅限于排序 2.接口功能 该接口代表一个比较器，比较器具有可比性！大多</description>
+      <description>本文系转载 1.为什么写？ comparator 是javase中的接口，位于java.util包下，该接口抽象度极高，有必要掌握该接口的使用 大多数文章告诉大家comparator是用来排序，但我想说排序是comparator能实现的功能之一，他不仅限于排序 2.接口功能 该接口代表一个比较器，比较器具有可</description>
     </item>
     
     <item>

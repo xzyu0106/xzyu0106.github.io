@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on 化简的博客</title>
+    <link>https://simplifythewhale.com/categories/golang/</link>
+    <description>Recent content in golang on 化简的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 03 Mar 2020 10:30:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://simplifythewhale.com/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>golang下载安装</title>
+      <link>https://simplifythewhale.com/post/200303golang%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Tue, 03 Mar 2020 10:30:50 +0800</pubDate>
+      
+      <guid>https://simplifythewhale.com/post/200303golang%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</guid>
+      <description>备忘录~因为总是要重装go，所以记录一下 centos 7, golang 1.14 安装 golang下载安装可直接看官网 https://studygolang.com/dl 但是在配置环境变量时，做如下配置 vi /etc/profile export GOROOT=/usr/local/go #设置为go安装的路径 export GOPATH=/usr/local/gopath #GO 项目路径(看个人爱好，我觉得这样舒服一点。。。) export PATH=$PATH:$GOPATH source /etc/profile #生效文件 使用 使用go mod 管理项目，就不需要非得把项目放到GOPATH指</description>
+    </item>
+    
+  </channel>
+</rss>

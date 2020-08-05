@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（2）—— 搭建kubernetes集群 | 化简的博客</title>
+    <meta property="og:title" content="kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（2）—— 搭建kubernetes集群 - 化简的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-03-01T23:43:11&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-03-01T23:43:11&#43;08:00'>
+        
+    <meta name="Keywords" content="DRL,python,micro-service,scheduler">
+    <meta name="description" content="kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（2）—— 搭建kubernetes集群">
+        
+    <meta name="author" content="化简">
+    <meta property="og:url" content="https://simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA2/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    <script data-ad-client="ca-pub-4031353640611810" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://simplifythewhale.com">
+                        化简的博客
+                    </a>
+                
+                <p class="description">专注于深度强化学习、微服务架构、服务组合与任务调度，现为一名人工智能研二er。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://simplifythewhale.com">首页</a>
+                    
+                    <a  href="https://simplifythewhale.com/tools/" title="生活杂记">生活杂记</a>
+                    
+                    <a  href="https://simplifythewhale.com/archives/" title="技术博客归档">技术博客归档</a>
+                    
+                    <a  href="https://simplifythewhale.com/about/" title="自我介绍絮絮叨">自我介绍絮絮叨</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-前言">1 前言</a></li>
+    <li><a href="#2-建造集群第一步初始化">2 建造集群第一步：初始化</a>
+      <ul>
+        <li><a href="#21-更正主机名">2.1 更正主机名</a></li>
+        <li><a href="#22-更改cgroup-driver">2.2 更改Cgroup Driver</a></li>
+        <li><a href="#23-提升虚拟机配置">2.3 提升虚拟机配置</a></li>
+        <li><a href="#24-再次初始化集群">2.4 再次初始化集群</a></li>
+        <li><a href="#25-解读">2.5 解读</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-建造集群第二步">3 建造集群第二步</a></li>
+    <li><a href="#4-建造集群第三步搭建网络">4 建造集群第三步：搭建网络</a></li>
+    <li><a href="#5-建造集群第四步将其他节点加入集群">5 建造集群第四步：将其他节点加入集群</a></li>
+    <li><a href="#6-建造集群完毕">6 建造集群完毕</a></li>
+    <li><a href="#7-小结">7 小结</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（2）—— 搭建kubernetes集群</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年3月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://simplifythewhale.com/categories/kubernetes'>kubernetes</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <h1 id="win10--virtualbox60---centos761810--docker18098--kubernetes1151--istio123">(win10 + virtualbox6.0 +  centos7.6.1810 + docker18.09.8 + kubernetes1.15.1 + istio1.2.3)</h1>
+<blockquote>
+<p>本系列分为三章，第一章是创建虚拟机、docker、kubernetes等一些基础设施；<a href="https://blog.csdn.net/weixin_42711936/article/details/97041456">第二章</a>是在此基础上创建一个三节点的kubernetes集群；<a href="https://blog.csdn.net/weixin_42711936/article/details/99311796">第三章</a>是再在之上搭建istio服务网格。<br>
+本文参考了大量其他优秀作者的创作（已经在开头列出），自己从零开始，慢慢搭建了istio服务网格，每一步都在文章中详细地列出了。之所以要自己重新从头搭建，一方面是很多CSDN、简书或其他平台的教程都已经离现在（2019.8.14）太过遥远，变得不合时宜，单纯地照着别人的路子走会遇到非常多的坑；另一方面是实践出真知。<br>
+由于我也是刚开始学习istio服务网格，才疏学浅，难免有不尽如人意的地方，还请见谅。</p>
+</blockquote>
+<p>本文参考网址：</p>
+<p><a href="https://www.jianshu.com/p/e43f5e848da1">https://www.jianshu.com/p/e43f5e848da1</a><br>
+<a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/</a><br>
+<a href="https://www.jianshu.com/p/1aebf568b786">https://www.jianshu.com/p/1aebf568b786</a><br>
+<a href="https://blog.csdn.net/donglynn/article/details/47784393">https://blog.csdn.net/donglynn/article/details/47784393</a><br>
+<a href="https://blog.csdn.net/MC_CodeGirl/article/details/79998656">https://blog.csdn.net/MC_CodeGirl/article/details/79998656</a><br>
+<a href="https://blog.csdn.net/andriy_dangli/article/details/85062983">https://blog.csdn.net/andriy_dangli/article/details/85062983</a><br>
+<a href="https://docs.projectcalico.org/v3.8/getting-started/kubernetes/installation/calico">https://docs.projectcalico.org/v3.8/getting-started/kubernetes/installation/calico</a><br>
+<a href="https://www.jianshu.com/p/70efa1b853f5">https://www.jianshu.com/p/70efa1b853f5</a><br>
+<a href="https://blog.csdn.net/weixin_44723434/article/details/94583457">https://blog.csdn.net/weixin_44723434/article/details/94583457</a><br>
+<a href="https://preliminary.istio.io/zh/docs/setup/kubernetes/download/">https://preliminary.istio.io/zh/docs/setup/kubernetes/download/</a><br>
+<a href="https://www.cnblogs.com/rickie/p/istio.html">https://www.cnblogs.com/rickie/p/istio.html</a><br>
+<a href="https://blog.csdn.net/lwplvx/article/details/79192182">https://blog.csdn.net/lwplvx/article/details/79192182</a><br>
+<a href="https://blog.csdn.net/qq_36402372/article/details/82991098">https://blog.csdn.net/qq_36402372/article/details/82991098</a><br>
+<a href="https://www.cnblogs.com/assion/p/11326088.html">https://www.cnblogs.com/assion/p/11326088.html</a><br>
+<a href="http://www.lampnick.com/php/823">http://www.lampnick.com/php/823</a><br>
+<a href="https://blog.csdn.net/ccagy/article/details/83059349">https://blog.csdn.net/ccagy/article/details/83059349</a><br>
+<a href="https://www.jianshu.com/p/789bc867feaa">https://www.jianshu.com/p/789bc867feaa</a><br>
+<a href="https://www.jianshu.com/p/dde56c521078">https://www.jianshu.com/p/dde56c521078</a></p>
+<h2 id="1-前言">1 前言</h2>
+<p>之前已经创建好了三台虚拟机
+三个节点IP分别为：</p>
+<pre><code>Node2：192.168.56.101
+Node3：192.168.56.102
+master：192.168.56.103
+</code></pre>
+<p>并已经分别与XSHELL相连，现在开始创建kubernetes集群。</p>
+<h2 id="2-建造集群第一步初始化">2 建造集群第一步：初始化</h2>
+<p>在Master主节点（k8s-master）上执行:</p>
+<pre><code>kubeadm init --pod-network-cidr=192.168.0.0/16 --kubernetes-version=v1.15.1 --apiserver-advertise-address=192.168.56.103
+</code></pre>
+<blockquote>
+<p>1.选项&ndash;pod-network-cidr=192.168.0.0/16表示集群将使用Calico网络，这里需要提前指定Calico的子网范围
+2.选项&ndash;kubernetes-version=v1.15.1指定kubernetes版本。
+3.选项&ndash;apiserver-advertise-address表示绑定的网卡IP，这里一定要绑定前面提到的enp0s8网卡，否则会默认使用enp0s3网卡
+4.若执行kubeadm init出错或强制终止，则再需要执行该命令时，需要先执行kubeadm reset重置</p>
+</blockquote>
+<p>然后就又出现了问题，如下</p>
+<pre><code>[root@k8s_master centos_master]# kubeadm init --pod-network-cidr=192.168.0.0/16 --kubernetes-version=v1.15.1 --apiserver-advertise-address=192.168.56.103
+name: Invalid value: &quot;k8s_master&quot;: a DNS-1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')
+</code></pre>
+<h3 id="21-更正主机名">2.1 更正主机名</h3>
+<p>经过检查，是因为这里的hostname不能带有<code>_</code>所以只能回去修改，把三个honstname分别按照之前的步骤进行修改，修改完之后重启虚拟机即可。改成如下:</p>
+<pre><code>k8s-master：192.168.56.103
+k8s-node2：192.168.56.101
+k8s-node3：192.168.56.102
+</code></pre>
+<h3 id="22-更改cgroup-driver">2.2 更改Cgroup Driver</h3>
+<p>接着再来一次，然后又报错。。。</p>
+<pre><code>[root@k8s-master centos_master]# kubeadm init --pod-network-cidr=192.168.0.0/16 --kubernetes-version=v1.15.1 --apiserver-advertise-address=192.168.56.103
+[init] Using Kubernetes version: v1.15.1
+[preflight] Running pre-flight checks
+    [WARNING IsDockerSystemdCheck]: detected &quot;cgroupfs&quot; as the Docker cgroup driver. The recommended driver is &quot;systemd&quot;. Please follow the guide at https://kubernetes.io/docs/setup/cri/
+error execution phase preflight: [preflight] Some fatal errors occurred:
+    [ERROR NumCPU]: the number of available CPUs 1 is less than the required 2
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+</code></pre>
+<p>第一个警告是因为推荐的驱动与我们之前安装的驱动不一样，输入<code>docker info</code>可以查看docker的驱动如下。
+<img src="https://img-blog.csdnimg.cn/20190808164135418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjcxMTkzNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+之前我们的docker的cgroup drive和kubelet的cgroup drive都是<code>cgroupfs</code>，并且他们两的驱动需要保持一致，因此我们这里需要把它们都改成<code>systemed</code>。</p>
+<h4 id="221-修改docker的cgroup-drive">2.2.1 修改docker的cgroup drive</h4>
+<p>修改或创建/etc/docker/daemon.json，加入下面的内容：</p>
+<pre><code>{
+  &quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;]
+}
+</code></pre>
+<p>然后重启docker，或者直接重启虚拟机也可以。
+开始修改，报错~
+<img src="https://img-blog.csdnimg.cn/20190808170143103.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjcxMTkzNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">是因为在用vim打开一个文件时，其会产生一个cmd.swap文件，用于保存数据，当文件非正常关闭时，可用此文件来恢复，当正常关闭时，此文件会被删除，非正常关闭时，不会被删除，所以提示存在.swap文件。</p>
+<blockquote>
+<p>进入该目录，<code>ls -a</code> 查询隐藏文件
+将后缀名为.swp的文件删除
+<code>rm .daemon.json.swp</code>
+再次编辑文件不再出现提示警告！</p>
+</blockquote>
+<p>然后还是不行，报错说这是一个目录，没法进行编辑，最后查了好久好久，才发现是我创建的方式不对，我使用的是<code>mkdir</code>创建文件，但是发现这个是用来创建目录的！！！正确的方法是用<code>vi</code>创建，即 <code>vi /etc/docker/daemon.json</code>， 然后顺势把内容写进去，这里虽然耗费了非常多的时间，不过对linux系统也有了更深的了解。</p>
+<p>正确处理后，重启docker</p>
+<pre><code>systemctl daemon-reload
+systemctl restart docker
+</code></pre>
+<p>查看，修改成功~
+<img src="https://img-blog.csdnimg.cn/20190808210807172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjcxMTkzNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="222-修改kubelet的cgroup-drive">2.2.2 修改kubelet的cgroup drive</h4>
+<p>下面是大部分的教程推荐的
+<img src="https://img-blog.csdnimg.cn/20190814193907326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjcxMTkzNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+但是实际使用时，发现那个地址是空的，最后发现可能是因为我们的版本是1.15.1，属于新版，地址应该修改成</p>
+<pre><code>/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf
+</code></pre>
+<p>代码如下</p>
+<pre><code>[root@k8s-master centos_master]# vi /usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf
+
+# Note: This dropin only works with kubeadm and kubelet v1.11+
+[Service]
+Environment=&quot;KUBELET_KUBECONFIG_ARGS=--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf&quot;
+Environment=&quot;KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml&quot;
+# This is a file that &quot;kubeadm init&quot; and &quot;kubeadm join&quot; generates at runtime, populating the KUBELET_KUBEADM_ARGS variable dynamically
+EnvironmentFile=-/var/lib/kubelet/kubeadm-flags.env
+# This is a file that the user can use for overrides of the kubelet args as a last resort. Preferably, the user should use
+# the .NodeRegistration.KubeletExtraArgs object in the configuration files instead. KUBELET_EXTRA_ARGS should be sourced from this file.
+EnvironmentFile=-/etc/sysconfig/kubelet
+ExecStart=
+ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS
+~                                                                                                                      
+~                                                                                                                      
+~                                       
+</code></pre><p>然后在<code>Environment=&quot;KUBELET_KUBECONFIG_ARGS=--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf&quot;</code>后面添加上<code>--cgroup-driver=systemd</code>。
+变成
+<code>Environment=&quot;KUBELET_KUBECONFIG_ARGS=--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --cgroup-driver=systemd&quot;</code></p>
+<p>接着重启kubelet</p>
+<pre><code>systemctl daemon-reload
+systemctl restart kubelet
+</code></pre>
+<h4 id="223-对另外两台虚拟机做同样操作修改cgroup-drive">2.2.3 对另外两台虚拟机做同样操作修改cgroup drive</h4>
+<h3 id="23-提升虚拟机配置">2.3 提升虚拟机配置</h3>
+<p>之前的报错第一个已经不见了，现在解决下一个。</p>
+<pre><code>[root@k8s-master centos_master]# kubeadm init --pod-network-cidr=192.168.0.0/16 --kubernetes-version=v1.15.1 --apiserver-advertise-address=192.168.56.103
+[init] Using Kubernetes version: v1.15.1
+[preflight] Running pre-flight checks
+error execution phase preflight: [preflight] Some fatal errors occurred:
+    [ERROR NumCPU]: the number of available CPUs 1 is less than the required 2
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+</code></pre>
+<p>这是因为虚拟机配置低了，回头看我们的虚拟机配置
+<img src="https://img-blog.csdnimg.cn/2019080911390943.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjcxMTkzNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">果然只有一个CPU，所以需要关闭虚拟机，把它的配置升级一下。
+<img src="https://img-blog.csdnimg.cn/20190809114110704.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjcxMTkzNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20190809114145343.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjcxMTkzNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">本来想是不是要给三个CPU会不会更好一点，但是后面的8CPU告诉我这不切实际。。。
+最后两外虚拟机同样操作，每个虚拟机给2个CPU。</p>
+<h3 id="24-再次初始化集群">2.4 再次初始化集群</h3>
+<pre><code>[root@k8s-master centos_master]# kubeadm init --pod-network-cidr=192.168.0.0/16 --kubernetes-version=v1.15.1 --apiserver-advertise-address=192.168.56.103
+[init] Using Kubernetes version: v1.15.1
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[kubelet-start] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;
+[kubelet-start] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;
+[kubelet-start] Activating the kubelet service
+[certs] Using certificateDir folder &quot;/etc/kubernetes/pki&quot;
+[certs] Generating &quot;ca&quot; certificate and key
+[certs] Generating &quot;apiserver&quot; certificate and key
+[certs] apiserver serving cert is signed for DNS names [k8s-master kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.56.103]
+[certs] Generating &quot;apiserver-kubelet-client&quot; certificate and key
+[certs] Generating &quot;etcd/ca&quot; certificate and key
+[certs] Generating &quot;etcd/server&quot; certificate and key
+[certs] etcd/server serving cert is signed for DNS names [k8s-master localhost] and IPs [192.168.56.103 127.0.0.1 ::1]
+[certs] Generating &quot;apiserver-etcd-client&quot; certificate and key
+[certs] Generating &quot;etcd/peer&quot; certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [k8s-master localhost] and IPs [192.168.56.103 127.0.0.1 ::1]
+[certs] Generating &quot;etcd/healthcheck-client&quot; certificate and key
+[certs] Generating &quot;front-proxy-ca&quot; certificate and key
+[certs] Generating &quot;front-proxy-client&quot; certificate and key
+[certs] Generating &quot;sa&quot; key and public key
+[kubeconfig] Using kubeconfig folder &quot;/etc/kubernetes&quot;
+[kubeconfig] Writing &quot;admin.conf&quot; kubeconfig file
+[kubeconfig] Writing &quot;kubelet.conf&quot; kubeconfig file
+[kubeconfig] Writing &quot;controller-manager.conf&quot; kubeconfig file
+[kubeconfig] Writing &quot;scheduler.conf&quot; kubeconfig file
+[control-plane] Using manifest folder &quot;/etc/kubernetes/manifests&quot;
+[control-plane] Creating static Pod manifest for &quot;kube-apiserver&quot;
+[control-plane] Creating static Pod manifest for &quot;kube-controller-manager&quot;
+[control-plane] Creating static Pod manifest for &quot;kube-scheduler&quot;
+[etcd] Creating static Pod manifest for local etcd in &quot;/etc/kubernetes/manifests&quot;
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &quot;/etc/kubernetes/manifests&quot;. This can take up to 4m0s
+[apiclient] All control plane components are healthy after 20.503142 seconds
+[upload-config] Storing the configuration used in ConfigMap &quot;kubeadm-config&quot; in the &quot;kube-system&quot; Namespace
+[kubelet] Creating a ConfigMap &quot;kubelet-config-1.15&quot; in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node k8s-master as control-plane by adding the label &quot;node-role.kubernetes.io/master=''&quot;
+[mark-control-plane] Marking the node k8s-master as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[bootstrap-token] Using token: 4lomz9.l7dq7yewuiuo7j6r
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the &quot;cluster-info&quot; ConfigMap in the &quot;kube-public&quot; namespace
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.56.103:6443 --token 4lomz9.l7dq7yewuiuo7j6r \
+    --discovery-token-ca-cert-hash sha256:a7c45b56471cfa88e897007b74618bae0c16bf4179d98710622bc64e3f0f6ed4 
+
+</code></pre><p>成功！</p>
+<h3 id="25-解读">2.5 解读</h3>
+<p>可以看到，提示集群成功初始化，并且我们需要执行以下命令：</p>
+<pre><code>mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+</code></pre>
+<p>另外， 提示我们还需要创建网络</p>
+<blockquote>
+<p>You should now deploy a pod network to the cluster. Run &ldquo;kubectl apply
+-f [podnetwork].yaml&rdquo; with one of the options listed at:   <a href="https://kubernetes.io/docs/concepts/cluster-administration/addons/">https://kubernetes.io/docs/concepts/cluster-administration/addons/</a></p>
+</blockquote>
+<p>并说了其他节点加入集群的方式</p>
+<blockquote>
+<p>Then you can join any number of worker nodes by running the following
+on each as root:</p>
+<p>kubeadm join 192.168.56.103:6443 &ndash;token 4lomz9.l7dq7yewuiuo7j6r<br>
+&ndash;discovery-token-ca-cert-hash sha256:a7c45b56471cfa88e897007b74618bae0c16bf4179d98710622bc64e3f0f6ed4</p>
+</blockquote>
+<h2 id="3-建造集群第二步">3 建造集群第二步</h2>
+<p>首先按照提示执行以下命令：</p>
+<pre><code>mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+</code></pre>
+<p>然后查看一下pod状态，果然没有创建网络的话，dns相关组件是堵塞状态。</p>
+<pre><code>[root@k8s-master centos_master]# kubectl get pod -n kube-system
+NAME                                 READY   STATUS    RESTARTS   AGE
+coredns-5c98db65d4-dnb85             0/1     Pending   0          60m
+coredns-5c98db65d4-jhdsl             0/1     Pending   0          60m
+etcd-k8s-master                      1/1     Running   0          59m
+kube-apiserver-k8s-master            1/1     Running   0          59m
+kube-controller-manager-k8s-master   1/1     Running   0          59m
+kube-proxy-78k2m                     1/1     Running   0          60m
+kube-scheduler-k8s-master            1/1     Running   0          59m
+</code></pre>
+<h2 id="4-建造集群第三步搭建网络">4 建造集群第三步：搭建网络</h2>
+<p>搭建网络的时候，同样遇到很多不合时宜的教程或是其他讲解的误导，为了防止大家看迷糊，所以下面直接写正确的步骤了。
+根据官方文档
+<a href="https://docs.projectcalico.org/v3.8/getting-started/kubernetes/">https://docs.projectcalico.org/v3.8/getting-started/kubernetes/</a>
+（1）这一步我们在初始化的时候已经完成，所以忽略。</p>
+<pre><code>sudo kubeadm init --pod-network-cidr=192.168.0.0/16
+</code></pre>
+<p>（2）这一步我们同样已经完成，忽略。</p>
+<pre><code>mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+</code></pre>
+<p>（3）执行以下命令</p>
+<pre><code>kubectl apply -f https://docs.projectcalico.org/v3.8/manifests/calico.yaml
+</code></pre>
+<p>然后会看到如下界面</p>
+<pre><code>configmap &quot;calico-config&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;felixconfigurations.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;ipamblocks.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;blockaffinities.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;ipamhandles.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;bgppeers.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;bgpconfigurations.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;ippools.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;hostendpoints.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;clusterinformations.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;globalnetworkpolicies.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;globalnetworksets.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;networksets.crd.projectcalico.org&quot; created
+customresourcedefinition.apiextensions.k8s.io &quot;networkpolicies.crd.projectcalico.org&quot; created
+clusterrole.rbac.authorization.k8s.io &quot;calico-kube-controllers&quot; created
+clusterrolebinding.rbac.authorization.k8s.io &quot;calico-kube-controllers&quot; created
+clusterrole.rbac.authorization.k8s.io &quot;calico-node&quot; created
+clusterrolebinding.rbac.authorization.k8s.io &quot;calico-node&quot; created
+daemonset.extensions &quot;calico-node&quot; created
+serviceaccount &quot;calico-node&quot; created
+deployment.extensions &quot;calico-kube-controllers&quot; created
+serviceaccount &quot;calico-kube-controllers&quot; created
+</code></pre>
+<p>（4）接下来执行以下命令观察</p>
+<pre><code>watch kubectl get pods --all-namespaces
+</code></pre>
+<p>直到每一个pod的状态都变成running。
+如下图就是箭头那一列，等到那一列都变成running之后
+<img src="https://img-blog.csdnimg.cn/20190810174320813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjcxMTkzNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">变成如下场景
+<img src="https://img-blog.csdnimg.cn/20190812101915648.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjcxMTkzNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+因为K8S集群默认不会将pod调度到Master上，这样master的资源就浪费了，设置master节点也可以被调度</p>
+<pre><code>[root@k8s-master centos_master]# kubectl taint nodes --all node-role.kubernetes.io/master-
+node/k8s-master untainted
+</code></pre>
+<p>使用以下命令确认我们的集群中现在有一个节点。</p>
+<pre><code>kubectl get nodes -o wide
+</code></pre>
+<p>得到如下反馈</p>
+<pre><code>NAME         STATUS   ROLES    AGE     VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION               CONTAINER-RUNTIME
+k8s-master   Ready    master   2d22h   v1.15.1   192.168.56.103   &lt;none&gt;        CentOS Linux 7 (Core)   3.10.0-957.21.3.el7.x86_64   docker://18.9.8
+</code></pre>
+<p>Congratulations！现在我们有了一个配备了Calico的单主机Kubernetes集群。</p>
+<h2 id="5-建造集群第四步将其他节点加入集群">5 建造集群第四步：将其他节点加入集群</h2>
+<p>在其他两个节点k8s-node2和k8s-node3上，执行主节点生成的kubeadm join命令即可加入集群：</p>
+<pre><code>kubeadm join 192.168.56.103:6443 --token 4lomz9.l7dq7yewuiuo7j6r --discovery-token-ca-cert-hash sha256:a7c45b56471cfa88e897007b74618bae0c16bf4179d98710622bc64e3f0f6ed4
+</code></pre>
+<p>然后报错</p>
+<pre><code>[root@k8s-node2 centos_master]# kubeadm join 192.168.56.103:6443 --token 4lomz9.l7dq7yewuiuo7j6r --discovery-token-ca-cert-hash sha256:a7c45b56471cfa88e897007b74618bae0c16bf4179d98710622bc64e3f0f6ed4
+[preflight] Running pre-flight checks
+error execution phase preflight: couldn't validate the identity of the API Server: abort connecting to API servers after timeout of 5m0s
+</code></pre>
+<p>原因：默认token的有效期为24小时，master节点的token过期了
+解决：创建新的token
+（1）在master节点上，得到新的token</p>
+<pre><code>[root@k8s-master centos_master]# kubeadm token create
+amrjle.m6zuzmlcfim6ntdk
+</code></pre>
+<p>（2）在master节点上，获取ca证书sha256编码hash值</p>
+<pre><code>[root@k8s-master centos_master]# openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2&gt;/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
+a7c45b56471cfa88e897007b74618bae0c16bf4179d98710622bc64e3f0f6ed4
+</code></pre>
+<p>（3）编辑新的添加节点的kubeadm join如下</p>
+<pre><code>    kubeadm join 192.168.56.103:6443 --token amrjle.m6zuzmlcfim6ntdk --discovery-token-ca-cert-hash sha256:a7c45b56471cfa88e897007b74618bae0c16bf4179d98710622bc64e3f0f6ed4
+</code></pre>
+<p>（4）重新添加节点，以node2为例</p>
+<pre><code>    [root@k8s-node2 centos_master]# kubeadm join 192.168.56.103:6443 --token amrjle.m6zuzmlcfim6ntdk --discovery-token-ca-cert-hash sha256:a7c45b56471cfa88e897007b74618bae0c16bf4179d98710622bc64e3f0f6ed4
+    [preflight] Running pre-flight checks
+    [preflight] Reading configuration from the cluster...
+    [preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -oyaml'
+    [kubelet-start] Downloading configuration for the kubelet from the &quot;kubelet-config-1.15&quot; ConfigMap in the kube-system namespace
+    [kubelet-start] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;
+    [kubelet-start] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;
+    [kubelet-start] Activating the kubelet service
+    [kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+    
+    This node has joined the cluster:
+    * Certificate signing request was sent to apiserver and a response was received.
+    * The Kubelet was informed of the new secure connection details.
+    
+    Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+</code></pre>
+<p>成功~，node3同理</p>
+<h2 id="6-建造集群完毕">6 建造集群完毕</h2>
+<p>将所有节点加入集群后，在master节点（主节点）上，运行<code>kubectl get nodes</code>查看集群状态如下</p>
+<pre><code>[root@k8s-master centos_master]# kubectl get nodes
+NAME         STATUS   ROLES    AGE     VERSION
+k8s-master   Ready    master   2d23h   v1.15.1
+k8s-node2    Ready    &lt;none&gt;   3m38s   v1.15.1
+k8s-node3    Ready    &lt;none&gt;   3m28s   v1.15.1
+</code></pre>
+<p>另外，可查看所有pod状态，运行<code>kubectl get pods -n kube-system</code></p>
+<pre><code>[root@k8s-master centos_master]# kubectl get pods -n kube-system
+NAME                                       READY   STATUS    RESTARTS   AGE
+calico-kube-controllers-7bd78b474d-4vgnh   1/1     Running   0          41h
+calico-node-p59hr                          1/1     Running   0          41h
+calico-node-rdcqs                          1/1     Running   0          4m46s
+calico-node-sc79x                          1/1     Running   0          4m56s
+coredns-5c98db65d4-dnb85                   1/1     Running   0          2d23h
+coredns-5c98db65d4-jhdsl                   1/1     Running   0          2d23h
+etcd-k8s-master                            1/1     Running   2          2d23h
+kube-apiserver-k8s-master                  1/1     Running   2          2d23h
+kube-controller-manager-k8s-master         1/1     Running   2          2d23h
+kube-proxy-78k2m                           1/1     Running   2          2d23h
+kube-proxy-n9ggl                           1/1     Running   0          4m46s
+kube-proxy-zvglw                           1/1     Running   0          4m56s
+kube-scheduler-k8s-master                  1/1     Running   2          2d23h
+</code></pre>
+<p>如图，所有pod都是running，则代表集群运行正常。</p>
+<blockquote>
+<p>备注：
+另外，k8s项目提供了一个官方的dashboard，因为我们平时还是命令行用的多，接下来还要搭建istio，所以这里就不再赘述，具体怎么安装可以自行去找一下教程，最终效果如下。
+<img src="https://img-blog.csdnimg.cn/20190812163046514.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjcxMTkzNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</blockquote>
+<h2 id="7-小结">7 小结</h2>
+<p>至此，kubernetes集群全部搭建正常！<a href="https://blog.csdn.net/weixin_42711936/article/details/99311796">下一章</a>我们开始在kubernetes集群之上搭建istio服务网格。</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://simplifythewhale.com">化简</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA2/">https://simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA2/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/200301k8s%E6%90%AD%E5%BB%BA1/">kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（1）—— 前期准备、安装docker、kubernetes</a></li>
+        
+        <li><a href="/post/200301hugo_operation_manual/">Hugo的基本操作</a></li>
+        
+        <li><a href="/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/">关于java中的void</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+        <li><a href="/about/">我啊</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='https://simplifythewhale.com/tags/%E5%AE%89%E8%A3%85'>安装</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= " xzyu0106/for-utterances"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="https://simplifythewhale.com">化简的博客 By 化简</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://www.beian.miit.gov.cn/">琼ICP备20002592号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://simplifythewhale.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://simplifythewhale.com">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://simplifythewhale.com/post/200720%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%A9%BA%E9%97%B4%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/" title="(置顶)我的个人空间/博客说明">(置顶)我的个人空间/博客说明</a>
+    </li>
+    
+    <li>
+        <a href="https://simplifythewhale.com/post/200801java_tips2/" title="java贴士(第二弹)">java贴士(第二弹)</a>
+    </li>
+    
+    <li>
+        <a href="https://simplifythewhale.com/post/200804javacompartator/" title="JAVA中comparator的使用">JAVA中comparator的使用</a>
+    </li>
+    
+    <li>
+        <a href="https://simplifythewhale.com/post/200731%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="十大排序算法动画与解析">十大排序算法动画与解析</a>
+    </li>
+    
+    <li>
+        <a href="https://simplifythewhale.com/post/200731java_tips/" title="java贴士(第一弹)">java贴士(第一弹)</a>
+    </li>
+    
+    <li>
+        <a href="https://simplifythewhale.com/post/200317mysql%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="MySQL遇到的问题汇总">MySQL遇到的问题汇总</a>
+    </li>
+    
+    <li>
+        <a href="https://simplifythewhale.com/post/200307%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/" title="持久化端口映射设置">持久化端口映射设置</a>
+    </li>
+    
+    <li>
+        <a href="https://simplifythewhale.com/post/200306%E5%AE%89%E8%A3%85mysql/" title="MySQL的安装及特定情境下的数据库远程操作">MySQL的安装及特定情境下的数据库远程操作</a>
+    </li>
+    
+    <li>
+        <a href="https://simplifythewhale.com/post/200303golang%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/" title="golang下载安装">golang下载安装</a>
+    </li>
+    
+    <li>
+        <a href="https://simplifythewhale.com/post/200302%E8%AE%B0%E5%BD%95/" title="日常接触到的小tip记录">日常接触到的小tip记录</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="https://simplifythewhale.com/categories/MySQL/">MySQL (3)</a></li>
+    
+    <li><a href="https://simplifythewhale.com/categories/golang/">golang (1)</a></li>
+    
+    <li><a href="https://simplifythewhale.com/categories/hugo/">hugo (1)</a></li>
+    
+    <li><a href="https://simplifythewhale.com/categories/java/">java (2)</a></li>
+    
+    <li><a href="https://simplifythewhale.com/categories/kubernetes/">kubernetes (3)</a></li>
+    
+    <li><a href="https://simplifythewhale.com/categories/%E5%A3%81%E7%BA%B8/">壁纸 (1)</a></li>
+    
+    <li><a href="https://simplifythewhale.com/categories/%E6%8A%80%E6%9C%AF/">技术 (1)</a></li>
+    
+    <li><a href="https://simplifythewhale.com/categories/%E7%AC%94%E8%AF%95/%E9%9D%A2%E8%AF%95/">笔试/面试 (3)</a></li>
+    
+    <li><a href="https://simplifythewhale.com/categories/%E8%AF%B4%E6%98%8E/">说明 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://simplifythewhale.com/tags/MySQL/">MySQL</a>
+    
+    <a href="https://simplifythewhale.com/tags/tip/">tip</a>
+    
+    <a href="https://simplifythewhale.com/tags/tips/">tips</a>
+    
+    <a href="https://simplifythewhale.com/tags/wallhaven/">wallhaven</a>
+    
+    <a href="https://simplifythewhale.com/tags/%E5%AE%89%E8%A3%85/">安装</a>
+    
+    <a href="https://simplifythewhale.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">排序算法</a>
+    
+    <a href="https://simplifythewhale.com/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+    
+    <a href="https://simplifythewhale.com/tags/%E9%B8%BD%E5%AD%90/">鸽子</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/weixin_42711936" title="化简的CSDN">我的CSDN</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/xzyu0106" title="化简的GitHub">我的GitHub</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="" title="化简的邮箱：xzyu0106@foxmail.com">我的邮箱 xzyu0106@foxmail.com</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://8.129.169.35/" title="另：推荐一个产品大佬的博客">另：推荐一个产品大佬的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://simplifythewhale.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

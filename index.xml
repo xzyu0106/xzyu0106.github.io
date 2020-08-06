@@ -6,7 +6,7 @@
     <description>Recent content on 化简的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 05 Aug 2020 12:10:50 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2020 11:30:50 +0800</lastBuildDate>
     
 	<atom:link href="https://simplifythewhale.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,24 @@
       
       <guid>https://simplifythewhale.com/post/200720%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%A9%BA%E9%97%B4%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/</guid>
       <description>Hello World 之前一直没有做网络笔记的习惯，也很少在一个专门的地方里记录自己学习到的知识点，疫情期间就利用了hugo+github搭建了这个博客，但是因为是挂在github上，一个是不方便其次网速也太慢，现在迁移到了阿里云上，并经过两周的备案有了自己的域名（化简那头鲸鱼 simplifyth</description>
+    </item>
+    
+    <item>
+      <title>java基础面试</title>
+      <link>https://simplifythewhale.com/post/200806java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Thu, 06 Aug 2020 11:30:50 +0800</pubDate>
+      
+      <guid>https://simplifythewhale.com/post/200806java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95/</guid>
+      <description>写在开始，我的笔试/面试系列博客有些内容是网络上查找的资料。这些资料里，有很多都是github上面的，平时查看因为网速或是手机原因很不方便，而且资料颇杂，所以我就统一搬运到这里来了，如果有冒犯之处可以随时和我联系，我会立即删除。记录下来只是为了方便平时复习的时候查看，放在一起要简</description>
+    </item>
+    
+    <item>
+      <title>计算机基础面试</title>
+      <link>https://simplifythewhale.com/post/200806%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Thu, 06 Aug 2020 07:30:50 +0800</pubDate>
+      
+      <guid>https://simplifythewhale.com/post/200806%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95/</guid>
+      <description>写在开始，我的笔试/面试系列博客有些内容是网络上查找的资料。这些资料里，有很多都是github上面的，平时查看因为网速或是手机原因很不方便，而且资料颇杂，所以我就统一搬运到这里来了，如果有冒犯之处可以随时和我联系，我会立即删除。记录下来只是为了方便平时复习的时候查看，放在一起要简</description>
     </item>
     
     <item>

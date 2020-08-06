@@ -20,5 +20,14 @@
       <description>在用户目录下生成公钥私钥对 ssh-keygen -t rsa</description>
     </item>
     
+    <item>
+      <title>面向对向、面向过程</title>
+      <link>https://simplifythewhale.com/post/180702%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Mon, 02 Jul 2018 12:10:50 +0800</pubDate>
+      
+      <guid>https://simplifythewhale.com/post/180702%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/</guid>
+      <description>最近一直在自学Python，有一句话“Python可以定义为面向对象的脚本语言”。 看到一个形象的比喻 面向过程是编年体；面向对象是纪传体。 编年体是以年代为线索编排有关历史事件，编年体史书以时间为中心，按年、月、日顺序记述史事，简而言之就是我按时间顺序把一段历史写下来，某某某在什么时</description>
+    </item>
+    
   </channel>
 </rss>

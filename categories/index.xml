@@ -75,20 +75,20 @@
     </item>
     
     <item>
-      <title>技术</title>
-      <link>https://simplifythewhale.com/categories/%E6%8A%80%E6%9C%AF/</link>
-      <pubDate>Mon, 02 Mar 2020 10:30:50 +0800</pubDate>
-      
-      <guid>https://simplifythewhale.com/categories/%E6%8A%80%E6%9C%AF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>kubernetes</title>
       <link>https://simplifythewhale.com/categories/kubernetes/</link>
       <pubDate>Sun, 01 Mar 2020 23:43:14 +0800</pubDate>
       
       <guid>https://simplifythewhale.com/categories/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://simplifythewhale.com/categories/python/</link>
+      <pubDate>Mon, 02 Jul 2018 12:10:50 +0800</pubDate>
+      
+      <guid>https://simplifythewhale.com/categories/python/</guid>
       <description></description>
     </item>
     

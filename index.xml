@@ -111,15 +111,6 @@
     </item>
     
     <item>
-      <title>日常接触到的小tip记录</title>
-      <link>https://simplifythewhale.com/post/200302%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Mon, 02 Mar 2020 10:30:50 +0800</pubDate>
-      
-      <guid>https://simplifythewhale.com/post/200302%E8%AE%B0%E5%BD%95/</guid>
-      <description>在用户目录下生成公钥私钥对 ssh-keygen -t rsa</description>
-    </item>
-    
-    <item>
       <title>kubernetes系列之从头开始搭建k8s集群&#43;istio服务网格（3）—— 搭建istio</title>
       <link>https://simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA3/</link>
       <pubDate>Sun, 01 Mar 2020 23:43:14 +0800</pubDate>
@@ -165,7 +156,7 @@
     </item>
     
     <item>
-      <title>面向对向、面向过程</title>
+      <title>面向对象、面向过程</title>
       <link>https://simplifythewhale.com/post/180702%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Mon, 02 Jul 2018 12:10:50 +0800</pubDate>
       

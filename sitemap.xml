@@ -113,12 +113,12 @@
   </url>
   
   <url>
-    <loc>https://simplifythewhale.com/categories/MySQL/</loc>
+    <loc>https://simplifythewhale.com/tags/MySQL/</loc>
     <lastmod>2020-03-07T11:30:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://simplifythewhale.com/tags/MySQL/</loc>
+    <loc>https://simplifythewhale.com/categories/MySQL/</loc>
     <lastmod>2020-03-07T11:30:50+08:00</lastmod>
   </url>
   
@@ -158,16 +158,6 @@
   </url>
   
   <url>
-    <loc>https://simplifythewhale.com/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2020-03-02T10:30:50+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://simplifythewhale.com/post/200302%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2020-03-02T10:30:50+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://simplifythewhale.com/categories/kubernetes/</loc>
     <lastmod>2020-03-01T23:43:14+08:00</lastmod>
   </url>
@@ -195,6 +185,11 @@
   <url>
     <loc>https://simplifythewhale.com/post/200219%E5%85%B3%E4%BA%8Ejava%E4%B8%AD%E7%9A%84void/</loc>
     <lastmod>2020-02-19T06:43:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simplifythewhale.com/categories/python/</loc>
+    <lastmod>2018-07-02T12:10:50+08:00</lastmod>
   </url>
   
   <url>

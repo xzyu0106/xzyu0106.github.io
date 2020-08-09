@@ -9,7 +9,37 @@
   
   <url>
     <loc>https://simplifythewhale.com/categories/</loc>
-    <lastmod>2020-08-01T10:10:50+08:00</lastmod>
+    <lastmod>2020-08-05T12:10:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simplifythewhale.com/categories/hugo/</loc>
+    <lastmod>2020-08-05T12:10:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simplifythewhale.com/post/200805hugo%E6%8C%96%E5%9D%91/</loc>
+    <lastmod>2020-08-05T12:10:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simplifythewhale.com/post/</loc>
+    <lastmod>2020-08-05T12:10:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simplifythewhale.com/tags/</loc>
+    <lastmod>2020-08-05T12:10:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simplifythewhale.com/</loc>
+    <lastmod>2020-08-05T12:10:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://simplifythewhale.com/tags/%E9%B8%BD%E5%AD%90/</loc>
+    <lastmod>2020-08-05T12:10:50+08:00</lastmod>
   </url>
   
   <url>
@@ -18,22 +48,7 @@
   </url>
   
   <url>
-    <loc>https://simplifythewhale.com/post/</loc>
-    <lastmod>2020-08-01T10:10:50+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://simplifythewhale.com/tags/</loc>
-    <lastmod>2020-08-01T10:10:50+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://simplifythewhale.com/tags/tips/</loc>
-    <lastmod>2020-08-01T10:10:50+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://simplifythewhale.com/</loc>
     <lastmod>2020-08-01T10:10:50+08:00</lastmod>
   </url>
   
@@ -78,11 +93,6 @@
   </url>
   
   <url>
-    <loc>https://simplifythewhale.com/tags/%E9%B8%BD%E5%AD%90/</loc>
-    <lastmod>2020-07-20T20:12:07+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://simplifythewhale.com/tools/</loc>
     <lastmod>2020-03-08T20:12:07+08:00</lastmod>
   </url>
@@ -103,12 +113,12 @@
   </url>
   
   <url>
-    <loc>https://simplifythewhale.com/tags/MySQL/</loc>
+    <loc>https://simplifythewhale.com/categories/MySQL/</loc>
     <lastmod>2020-03-07T11:30:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://simplifythewhale.com/categories/MySQL/</loc>
+    <loc>https://simplifythewhale.com/tags/MySQL/</loc>
     <lastmod>2020-03-07T11:30:50+08:00</lastmod>
   </url>
   
@@ -165,11 +175,6 @@
   <url>
     <loc>https://simplifythewhale.com/post/200301k8s%E6%90%AD%E5%BB%BA1/</loc>
     <lastmod>2020-03-01T23:40:13+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://simplifythewhale.com/categories/hugo/</loc>
-    <lastmod>2020-03-01T10:30:50+08:00</lastmod>
   </url>
   
   <url>

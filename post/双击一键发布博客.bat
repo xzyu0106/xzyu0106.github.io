@@ -19,3 +19,5 @@ git push -u origin master
 TIMEOUT /T 30
 scp -r D:/hugo/sites/myblog/public/* root@121.41.229.169:/home/hugo
 TIMEOUT /T 3
+scp -r D:/hugo/sites/myblog/public/* root@121.41.229.169:/home/hugo
+TIMEOUT /T 3
